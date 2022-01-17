@@ -1,0 +1,23 @@
+.offcanvas-title {
+  color: #b6b4b4;
+  text-align: center;
+  margin: auto;
+  font-family: Poppins, sans-serif;
+  font-weight: 900;
+}
+
+.title-underline {
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.btn-close {
+  position: absolute;
+}
+
+img.cart-icon {
+  cursor: pointer;
+}
+
+.cart-icon {
+  cursor: pointer;
+}

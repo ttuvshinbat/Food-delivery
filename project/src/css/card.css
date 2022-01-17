@@ -1,0 +1,242 @@
+.card:hover .middle {
+  opacity: 1;
+  background-color: #0003;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hoverImg {
+  height: 41px;
+  width: 48px;
+}
+.hoverText {
+  color: white;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 400;
+}
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@media (max-width: 739px) {
+  .card {
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px !important;
+    padding: 10px;
+    height: 100%;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 7px;
+  }
+
+  .card p {
+    font-weight: 600;
+    margin: 0;
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .strike-dark {
+    font-weight: 400;
+    color: #171717;
+    font-size: 14px;
+    line-height: 21px !important;
+    padding-left: 10px;
+  }
+
+  .activePrice {
+    font-weight: bold;
+    color: #f17228;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    margin-top: 0 !important;
+  }
+
+  .price {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .badge {
+    background-color: #f17228;
+    border-radius: 0px 7px 0px 20px !important;
+    position: absolute;
+    width: 50px;
+    height: 27px;
+    top: 10px;
+    right: 10px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .card {
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px !important;
+    padding: 10px;
+    height: 100%;
+  }
+  .card img {
+    width: 100%;
+    border-radius: 7px;
+  }
+
+  .card p {
+    font-weight: 600;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .strike-dark {
+    font-weight: 400;
+    color: #171717;
+    font-size: 18px;
+    line-height: 27px !important;
+    padding-left: 15px;
+  }
+
+  .activePrice {
+    font-weight: bold;
+    color: #f17228;
+    font-size: 18px !important;
+    line-height: 27px !important;
+    margin-top: 0 !important;
+  }
+
+  .price {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .badge {
+    background-color: #f17228;
+    border-radius: 0px 8px 0px 20px !important;
+    position: absolute;
+    width: 75px;
+    height: 43px;
+    top: 10px;
+    right: 10px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    line-height: 27px;
+    font-weight: 600 !important;
+    padding: 0 !important;
+  }
+}
+@media (min-width: 740px) and (max-width: 1023px) {
+  .card {
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px !important;
+    padding: 10px;
+    height: 100%;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 7px;
+  }
+
+  .card p {
+    font-weight: 600;
+    margin: 0;
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: 10px;
+    margin-top: 4px;
+  }
+  .strike-dark {
+    font-weight: 400;
+    color: #171717;
+    font-size: 14px;
+    line-height: 21px !important;
+    padding-left: 15px;
+  }
+
+  .activePrice {
+    font-weight: bold;
+    color: #f17228;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    margin-top: 0 !important;
+  }
+
+  .price {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .badge {
+    background-color: #f17228;
+    border-radius: 0px 6px 0px 10px !important;
+    position: absolute;
+    width: 46px;
+    height: 26px;
+    top: 10px;
+    right: 10px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+  }
+}
+@media (min-width: 1400px) {
+  .middle {
+    width: 312px;
+    height: 338px;
+  }
+}
+@media (max-width: 1399px) {
+  .middle {
+    width: 267px;
+    height: 299px;
+  }
+}
+@media (max-width: 1199px) {
+  .middle {
+    width: 222px;
+    height: 259px;
+  }
+}
+@media (max-width: 1023px) {
+  .middle {
+    width: 222px;
+    height: 241px;
+  }
+}
+@media (max-width: 991px) {
+  .middle {
+    width: 162px;
+    height: 188px;
+  }
+}
+@media (max-width: 767px) {
+  .middle {
+    display: none;
+  }
+}

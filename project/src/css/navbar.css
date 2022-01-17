@@ -1,0 +1,279 @@
+.container {
+  padding: 0;
+}
+.toggleButton {
+  display: none;
+}
+nav {
+  box-shadow: 0px 2px 4px rgba(241, 114, 40, 0.05);
+}
+.headerMenu .menu li a {
+  color: #000;
+}
+.headerMenu a {
+  text-decoration: none;
+}
+.headerMenu .logo .logoItems {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 1440px) {
+  .dropMenu {
+    display: none;
+  }
+  .headerMenu {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    height: 56px;
+    align-items: center;
+    background-color: #fefefe;
+  }
+
+  .headerMenu .logo .logoImg {
+    height: 40px;
+    width: 40px;
+  }
+  .headerMenu .logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .headerMenu .logo .logoText {
+    color: #f17228;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .headerMenu .menu {
+    display: flex;
+    list-style-type: none;
+    gap: 41px;
+    margin: 16px 0;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 16px;
+  }
+  .headerMenu .logo .logoItems {
+    gap: 4px;
+  }
+  .headerMenu .menu li a {
+    color: #000;
+  }
+  .headerMenu .menu .activeMenuItem {
+    color: #f17228;
+    font-weight: bold;
+  }
+  .headerMenu .menu .notActiveMenuItem {
+    color: #000;
+    font-weight: 500;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+  .searchIcon,
+  .mobileUser {
+    display: none;
+  }
+  .headerMenu .searchBox {
+    border: 1px solid #fbc5a6;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 235px;
+    height: 32px;
+  }
+  .headerMenu .userBusket {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 20px 0;
+  }
+  .headerMenu .userBusket .userBusketList .userBusketElement {
+    display: flex;
+    gap: 4px;
+  }
+  .headerMenu .userBusket .userBusketList .userBusketElement a {
+    color: #f17228;
+  }
+}
+@media (max-width: 1439px) {
+  .container .headerMenu {
+    background-color: #fff;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+    padding: 0;
+  }
+  .container .headerMenu .logo {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .container .headerMenu .logo .logoImg {
+    height: 30px;
+    width: 30px;
+  }
+  .container .header .searchIcon {
+    align-items: center;
+  }
+  .container .headerMenu .logo .logoText {
+    color: #f17228;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .container .headerMenu .searchBox,
+  .mobileUser {
+    display: none;
+  }
+
+  .container .headerMenu .menu {
+    display: flex;
+    gap: 23px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+  .container .headerMenu .menu li {
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    text-align: center;
+    color: #000;
+  }
+  .container .headerMenu .menu .activeMenuItem {
+    font-weight: 600;
+    color: #f17228;
+  }
+  .icons {
+    display: flex;
+    gap: 20.5px;
+  }
+  .icons .searchIcon {
+    width: 18px;
+    height: 18px;
+    margin: auto 0;
+  }
+  .container .headerMenu .userBusket {
+    display: flex;
+    gap: 21.5px;
+    list-style-type: none;
+    align-items: center;
+    padding: 0 0;
+    margin: auto 0;
+  }
+  .container .headerMenu .userBusket .userBusketList .userBusketElement a {
+    display: none;
+  }
+  .container .headerMenu .userBusket .userBusketList .userBusketElement img {
+    height: 18px;
+    width: 21px;
+    margin: auto 0;
+  }
+  .dropMenu {
+    display: none;
+  }
+}
+@media (min-width: 767px) {
+  .hidemenu {
+    display: none;
+  }
+}
+@media (max-width: 834px) {
+  .container .headerMenu .userBusket {
+    display: none;
+  }
+
+  .container .headerMenu .mobileUser {
+    display: block;
+    height: 18px;
+    width: 16px;
+    margin: auto 0;
+  }
+}
+@media (max-width: 767px) {
+  .container .headerMenu .menu {
+    display: none;
+    width: 100%;
+  }
+  .container .headerMenu {
+    align-items: center;
+  }
+  .toggleButton {
+    display: flex;
+    color: #f17228;
+  }
+  .mainDropMenu {
+    background-color: #fefefe;
+    padding: 20px;
+  }
+  .dropMenu {
+    padding: 20px;
+    background-color: #f0efef;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+  }
+  .dropMenuMinSection {
+    display: flex;
+    gap: 15px;
+  }
+  .dropMenuImg img {
+    width: 15px;
+    height: 15px;
+  }
+  .dropMenuText {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+  .dropMenuMinSection {
+    display: flex;
+    align-items: center;
+  }
+  .dropMenuImg {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    background-color: #f2994a1a;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropMenuContent {
+    display: flex;
+    justify-content: space-between;
+  }
+  .dropMenuSection {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+  }
+  #dropMenuBorder {
+    border-bottom: 1px #f17228 solid;
+  }
+  .dropMenuSection:first-child {
+    margin-bottom: 10px;
+  }
+  .dropMenuContent:first-child {
+    padding-bottom: 10px;
+  }
+  .dropMenuContent:last-child {
+    padding-top: 10px;
+  }
+  .dropMenuText:hover {
+    color: #f17228;
+  }
+}

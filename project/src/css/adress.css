@@ -1,0 +1,139 @@
+.padd{
+    padding-left: 40px !important;
+}
+.changeCss:focus{
+    outline: none;
+}
+@media screen and (min-width: 320px){
+    .shargal11{
+        background-color: #F17228;
+        border-radius: 20px;
+        border: 0;
+        height: 45px;
+        color: white;
+    }
+    .inputStyle{
+        border: 1px solid #B5B5B5;
+        box-sizing: border-box;
+        border-radius: 10px;
+       
+    }
+    .forms{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .turshilt{
+        align-items: start;
+        
+    }
+    .uuu {
+        
+       background-color: #F17228;
+        box-sizing: border-box;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .forms{
+        position: relative;
+    }
+    .selectbox{
+        z-index: 1;
+        position: relative;
+        border-radius: 10px;
+        color: white;
+        background-color: #F17228;
+       
+        
+    }
+    .selectbox::after{
+        z-index: 0;
+        position: absolute;
+        content: '';
+        background-image: url('../icons/navlogo.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+
+        top: 8px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+    .text-shargal{
+        color: #F17228;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 21px;
+    
+    }
+    .changeCss{
+        background-color: #F17228;
+        border: 0;
+        color: white;
+        border-radius: 10px;
+    }
+    
+    input[type="checkbox"]{
+        background-color: white ;
+        border: 1px solid #F17228 !important;
+        border-radius: 10px !important;
+        appearance: none !important;
+        width: 13px;
+        height: 13px;
+    
+    }
+    input:checked[type=radio]{
+        color: white;
+        appearance: none !important;
+        border: 7px solid #F17228 !important;
+        border-radius: 10px !important;
+        width: 13px;
+        height: 13px;
+        background-color: #F17228 !important;
+    }
+    .gadna{
+        border: 0;
+    }
+   
+    @media screen and (min-width: 768px){
+    .gadna{
+        border: #F17228 1px solid;
+       
+    }
+    .lastButton{
+        display: flex;
+        flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       }
+       .marginAvii{
+           margin-left: 45%;
+       }
+    .ondorOghoos{
+        height: 70vh;
+    }
+    .borderShargal{
+        color: white;
+        border: 0;
+        background-color: #F17228;
+    }
+    }
+    @media screen and (min-width: 992px){
+        .gadna{
+            border: 0;
+        }
+        .lastButton{
+            display: flex;
+            flex-direction: column;
+           justify-content: end;
+           align-items: end;
+           }
+           .marginAvii{
+            margin-left: 0;
+        }
+    }
+
+}

@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+.slidingButtons {
+  width: 100vw;
+  margin: 10px;
+  margin-bottom: 0px;
+  padding: 10px;
+  padding-bottom: 5px;
+  margin-left: 0px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.slidingButtons::-webkit-scrollbar {
+  width: 0;
+}
+
+.button {
+  min-width: 150px;
+  text-align: center;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #f17228;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  border: 1px solid #f17228;
+}
+
+/* .button:hover {
+  color: #f17228;
+} */
+
+.button:hover,
+.active-menu-button {
+  background-color: #f17228;
+  color: #ffffff;
+  border: none;
+}
+
+@media screen and (min-width: 740px) {
+  .button {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .button {
+    margin-bottom: 20px;
+  }
+}

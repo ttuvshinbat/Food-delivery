@@ -1,0 +1,76 @@
+.field-contianer {
+  /* background-color: lavender; */
+  /* padding: 0px 20px; */
+}
+
+.form, button {
+  width: 100%;
+  text-transform: uppercase;
+
+}
+
+.registerButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration-line: underline;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 200;
+  color: #828282;
+  font-size: 12px;
+  margin: 11.5px 0;
+}
+
+.forgotPass {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  text-decoration-line: none;
+  color: #171717;
+  /* margin-top: 10px; */
+  /* background-color: #828282; */
+  
+}
+
+/* a:hover {
+    color: #F17228;
+} */
+
+.agreeTo {
+  margin-bottom: 15px;
+  
+}
+
+
+
+.hmm {
+  display: flex;
+  position: relative;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  margin: 0px;
+  width: 340px;
+  text-align: center;
+  padding-left: 5px;
+  margin-bottom: 30px;
+}
+
+.hmm::after {
+  width: 5px;
+  height: 100%;
+
+}

@@ -1,0 +1,238 @@
+.closeButton {
+  border: none;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+
+.modalIngredients {
+  border-radius: 10px;
+  background-color: #f7f8f7;
+  padding: 20px 10px 12px 24px;
+}
+
+.modalPrice {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #f17228;
+}
+
+.modalHeader {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.NameAndPrice {
+  display: flex;
+  border-bottom: 1px solid #f7f8f7;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.sizeButton {
+  background: #ffffff;
+  border: 1px solid #ffd7bf;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 9.5px 0;
+}
+
+.modalSizeButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.modalCounterButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.counterButton {
+  width: 45px;
+  height: 40px;
+  color: white;
+  background-color: #f17228;
+  border: none;
+  border-radius: 10px;
+}
+
+@media (min-width: 1440px) {
+  .modal-dialog {
+    max-width: 996px;
+    max-height: 572px;
+  }
+
+  .my-modal {
+    padding: 48.5px 43px;
+    display: flex;
+    gap: 24px;
+  }
+
+  .modalimg {
+    width: 443px;
+    height: 475px;
+  }
+
+
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+
+  .counterNumber {
+    width: 254px;
+    padding: 8px;
+    background-color: #fff1e9;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .orderButton {
+    color: white;
+    border: none;
+    background-color: #f17228;
+    text-align: center;
+    padding: 13px 0;
+    border-radius: 10px;
+  }
+
+  /* size button padding removed due to design requirements */
+
+  /* .sizeButton {
+    padding: 9.5px 73px;
+  } */
+
+}
+
+@media (max-width: 1439px) {
+  .modal-dialog {
+    max-width: 700px;
+  }
+
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .my-modal {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    padding: 20px 40px;
+    gap: 20px;
+  }
+
+  .closeButton {
+    order: -1;
+    align-self: flex-end;
+  }
+
+  .modalimg {
+    width: 620px;
+    height: 329px;
+  }
+
+  .sizeButton {
+    padding: 9.5px 125px;
+  }
+
+  .counterNumber {
+    background-color: #fff1e9;
+    border-radius: 10px;
+    width: 450px;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .orderButton {
+    border: none;
+    background-color: #f17228;
+    color: white;
+    border-radius: 10px;
+    width: 618px;
+    padding: 13px 0;
+  }
+
+}
+
+@media (max-width: 739px) {
+  .modal-dialog {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .my-modal {
+    padding: 0;
+    position: relative;
+  }
+
+  .modalimg {
+    width: 100%;
+  }
+
+  .modalMain {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .modalIngredients {
+    background-color: white;
+    padding: 0;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .modalContent {
+    gap: 10px;
+  }
+
+  .closeButton {
+    order: 0;
+    align-self: flex-end;
+  }
+
+  .NameAndPrice {
+    padding: 10px;
+  }
+
+  .modalCounterButtons {
+    gap: 10px;
+  }
+
+  .sizeButton {
+    width: 45%;
+    padding: 10px;
+  }
+
+  .orderButton {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #f17228;
+    background-color: #fff1e905;
+    background: rgba(255, 241, 233, 0.5);
+  }
+
+}
+
+.activeButton {
+  background-color: #f17228;
+  color: white;
+  border: none;
+}
+
