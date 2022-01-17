@@ -9,6 +9,7 @@ const AddressVertification = () => {
     const [state, setstate] = useState(0)
     const togleShow = (event) => {
         setstate(event.target.value)
+       
     }
 
     const [state1, setstate1] = useState(0)

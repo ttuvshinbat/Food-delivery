@@ -1,14 +1,34 @@
 // import Buttons from "@restart/ui/esm/Button";
-import React from "react";
+import React, {useState}  from "react";
+
 import Buttons from "./Button.js";
 import TextInput from "./TextInput.js";
 import { NavLink, useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../css/login.css";
+import {Form} from "react-bootstrap";
+import { userService } from "../services/userService.js";
 
 const Login = () => {
 
+  const  [email, setEmail] = useState(0)
+   
+   const handleSubmit = (event) => {
+    event.preventDefault();
+    userService
+      .loginUser({
 
+        email: event.target.email.value,
+        password: event.target.password.value,
+        name: "temka",
+        address: "mongolia"
+
+      }).then(sda => {
+        sda.json()
+      }).then(data => console.log(data))
+
+  }
+   
   // const history = useHistory();
   // const routeChange = () => {
   //   let path = "/register";
@@ -17,10 +37,11 @@ const Login = () => {
 
 
   return (
-    <div className="field-contianer d-flex flex-column mt-5 mb-5 align-items-center justify-content-center">
+
+    <Form onSubmit={handleSubmit}  className="field-contianer d-flex flex-column mt-5 mb-5 align-items-center justify-content-center">
       <p className="col-6 hmm fw-bold ms-2 ">нэвтрэх</p>
 
-      <TextInput type={"email"} name={"И-мэйл"} />
+      <TextInput type={"email"}  name={"И-мэйл"}  />
       <TextInput type={"password"} name={"Нууц үг"} />
       <NavLink className="forgotPass mb-4" to='/forget'>
       <a className="forgotPass mb-4" href="#">
@@ -41,7 +62,7 @@ const Login = () => {
         // onClick={() => routeChange()}
         />
       </Link>
-    </div>
+    </Form>
   );
 };
 

@@ -2,17 +2,34 @@ import Buttons from "./Button.js";
 import React from "react";
 import TextInput from "./TextInput.js";
 import "../css/login.css";
+import { Form } from "react-bootstrap";
+import { userService } from "../services/userService.js";
 
 const Register = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    userService
+      .registerUser({
+
+        email: event.target.email.value,
+        password: event.target.password.value,
+        name: "temka",
+        address: "mongolia"
+
+      }).then(sda => {
+        sda.json()
+      }).then(data => console.log(data))
+
+  }
   return (
-      
-      <div className="field-contianer d-flex flex-column mt-5 mb-5 align-items-center justify-content-center">
-      
+
+    <Form onSubmit={handleSubmit} className="field-contianer d-flex flex-column mt-5 mb-5 align-items-center justify-content-center">
+
       <p className="hmm fw-bold">Бүртгүүлэх</p>
 
-      <TextInput type={"email"} name={"И-мэйл"} />
-      <TextInput type={"password"} name={"Нууц үг"} />
-      <TextInput type={"password"} name={"Нууц үг давтах"} />
+      <TextInput type={"email"} name={"И-мэйл"} value="" />
+      <TextInput type={"password"} name={"Нууц үг"} value=""  />
+      <TextInput type={"passwordRepeat"} name={"Нууц үг давтах"} value="" />
 
       <div className="agreeTo d-flex justify-content-between">
         <input
@@ -27,7 +44,7 @@ const Register = () => {
       </div>
 
       <Buttons class={"signupTabletView"} type={"Бүртгүүлэх"} />
-    </div>
+    </Form>
   );
 };
 

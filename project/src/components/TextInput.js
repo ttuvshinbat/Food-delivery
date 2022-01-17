@@ -31,12 +31,12 @@ const TextInput = (props) => {
       />
     </div>
   );
-  if (type === "password")
+  if (type === "password" || type === "passwordRepeat")
     defInput = (
       <div className="input-container d-flex">
         <Form.Control
           className="input-field"
-          type={type}
+          type="password"
           placeholder="Нууц үгээ оруулна уу. "
         />
         <span
@@ -61,7 +61,7 @@ const TextInput = (props) => {
     );
 
   return (
-    <Form.Group className="form mb-3" controlId="exampleForm.ControlInput1">
+    <Form.Group className="form mb-3" controlId={type}>
       <Form.Label className="input-label">
         {name[0].toUpperCase() + name.substring(1)}
       </Form.Label>
