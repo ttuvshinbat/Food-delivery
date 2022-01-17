@@ -17,6 +17,7 @@ import TermOfUse from "./components/TermOfUse"
 import Privacy from './components/Privacy'
 import ForgetPassword from './components/ForgetPassword'
 import NewPassword from "./components/NewPassword";
+import AddressVertification from "./components/AddressVertification";
 
 function App() {
   return (
@@ -29,14 +30,15 @@ function App() {
         <Route path="/search" component={Search} />
         <Route path="/user" component={User} />
         <Route path="/market" component={Market} />
-        <Route path="/termofuse" component={TermOfUse}/>
-        <Route path="/privacy" component={Privacy}/>
+        <Route path="/termofuse" component={TermOfUse} />
+        <Route path="/privacy" component={Privacy} />
         <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} /> 
+        <Route path="/register" component={Register} />
         <Route path="/pageInsideMenu" component={PageInsideMenu} />
-        <Route path="/forget" component={ForgetPassword}/>
-        <Route path="/newpassword" component={NewPassword}/>
-        <Route component={NotFound}/>
+        <Route path="/forget" component={ForgetPassword} />
+        <Route path="/newpassword" component={NewPassword} />
+        <Route path="/address" component={AddressVertification} />
+        <Route component={NotFound} />
       </Switch>
       <Footer />
     </BrowserRouter>

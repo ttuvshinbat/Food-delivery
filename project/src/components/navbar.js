@@ -1,11 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, } from "react";
 import "../css/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, Switch } from "react-router-dom";
 import CartSidebar from "./CartSidebar";
+import { useUser } from "../contexts/UserContext"
 const HeaderMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
+  // const [user, setUser] = useUser();
+  // useEffect(() => {
+  //   if (localStorage.getItem("userInfo")) {
+  //     const data = JSON.parse(localStorage.getItem("userInfo"))
+  //     setUser({
+  //       userName: data.name,
+  //       email: data.email,
+  //       address: data.address,
+  //     });
+
+  //   }
+  // }, [])
+
+
+
   let menu;
   if (showMenu) {
     menu = (
