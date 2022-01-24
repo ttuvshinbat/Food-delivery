@@ -7,18 +7,7 @@ import CartSidebar from "./CartSidebar";
 import { useUser } from "../contexts/UserContext"
 const HeaderMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
-  // const [user, setUser] = useUser();
-  // useEffect(() => {
-  //   if (localStorage.getItem("userInfo")) {
-  //     const data = JSON.parse(localStorage.getItem("userInfo"))
-  //     setUser({
-  //       userName: data.name,
-  //       email: data.email,
-  //       address: data.address,
-  //     });
-
-  //   }
-  // }, [])
+  const [user, setUser] = useUser();
 
 
 

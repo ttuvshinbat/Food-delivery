@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { getAllFood } from "../services/foodService";
 
 function Desserts() {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    fetch("../data/foods.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setFoods(data);
-      });
+    getAllFood()
+      .then(res => res.json())
+      .then(data => setFoods(data.data))
   }, []);
+
 
   let desserts = foods.filter((p) => p.category === "амттан").slice(0, 4);
 
@@ -22,15 +22,7 @@ function Desserts() {
       <div className="row">
         {desserts.map((i) => {
           return (
-            <Card
-              img={i.img}
-              name={i.name}
-              discountPrice={i.discountPrice}
-              price={i.price}
-              sales={i.sales}
-              percent={i.discountPercentage}
-
-              ingredients={i.ingredients}
+            <Card data={i} key={i._id}
             />
           );
         })}
