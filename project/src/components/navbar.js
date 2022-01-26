@@ -1,27 +1,11 @@
-import React, { useEffect, useState, } from "react";
+import React, { useState } from "react";
 import "../css/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, Switch } from "react-router-dom";
-import CartSidebar from "./CartSidebar";
-import { useUser } from "../contexts/UserContext"
+import { faBars, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
+import SearchForm from "./SearchForm";
 const HeaderMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
-  // const [user, setUser] = useUser();
-  // useEffect(() => {
-  //   if (localStorage.getItem("userInfo")) {
-  //     const data = JSON.parse(localStorage.getItem("userInfo"))
-  //     setUser({
-  //       userName: data.name,
-  //       email: data.email,
-  //       address: data.address,
-  //     });
-
-  //   }
-  // }, [])
-
-
-
   let menu;
   if (showMenu) {
     menu = (
@@ -92,7 +76,7 @@ const HeaderMenu = () => {
         <div className="headerMenu">
           <FontAwesomeIcon
             className="toggleButton"
-            icon={faBars}
+            icon={showMenu ? faChevronLeft : faBars}
             onClick={() => {
               setShowMenu(!showMenu);
             }}
@@ -128,19 +112,13 @@ const HeaderMenu = () => {
             </li>
           </ul>
           <div className="icons">
-            <input
-              className="searchBox"
-              type="text"
-              placeholder="&#128269; Хайх"
-            />
-            <img className="searchIcon" src="/icons/searchicon.svg" />
+            <SearchForm />
             <img className="mobileUser" src="/icons/mobileuser.svg" />
             <ul className="userBusket">
               <li className="userBusketList">
                 <div className="userBusketElement">
-                  {/* <img src="/icons/busketicon.svg" /> */}
-                  {/* <a href="">Сагс</a> */}
-                  <CartSidebar />
+                  <img src="/icons/busketicon.svg" />
+                  <a href="">Сагс</a>
                 </div>
               </li>
               <li className="userBusketList">
@@ -148,6 +126,14 @@ const HeaderMenu = () => {
                   <div className="userBusketElement">
                     <img src="/icons/usericon.svg" />
                     <a href="">Нэвтрэх</a>
+                  </div>
+                </NavLink>
+              </li>
+              <li className="userBusketList">
+                <NavLink to="/userProfile">
+                  <div className="userBusketElement">
+                    <img src="/icons/usericon.svg" />
+                    <a href="">Хэрэглэгч</a>
                   </div>
                 </NavLink>
               </li>
