@@ -1,3 +1,5 @@
+
+
 import Buttons from "./Button.js";
 import React from "react";
 import TextInput from "./TextInput.js";
@@ -28,7 +30,7 @@ const Register = () => {
       <p className="hmm fw-bold">Бүртгүүлэх</p>
 
       <TextInput type={"email"} name={"И-мэйл"} value="" />
-      <TextInput type={"password"} name={"Нууц үг"} value=""  />
+      <TextInput type={"password"} name={"Нууц үг"} value="" />
       <TextInput type={"passwordRepeat"} name={"Нууц үг давтах"} value="" />
 
       <div className="agreeTo d-flex justify-content-between">
