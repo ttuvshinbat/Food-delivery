@@ -64,7 +64,7 @@ const Login = () => {
       </NavLink>
 
       {/* <p></p> */}
-      <Buttons class={"loginTabletView"} type={"Login"} />
+      <Buttons class={"loginTabletView"} type={"Login"} value="НЭВТРЭХ"/>
       {/* <p></p> */}
       <p className="underline">эсвэл</p>
 
@@ -73,6 +73,7 @@ const Login = () => {
           className="registerButton"
           class={"loginTabletView"}
           type={"Бүртгүүлэх"}
+          value="Бүртгүүлэх"
         // onClick={() => routeChange()}
         />
       </Link>
