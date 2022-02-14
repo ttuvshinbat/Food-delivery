@@ -4,7 +4,7 @@ import '../css/card.css'
 import TestModal from './ExampleModal'
 
 const Card = (props) => {
-    console.log(props)
+
     const [showModal, setShowModal] = useState(false)
     let cards = props.sales ? (
         <div className="card"

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useFood } from "../contexts/FoodPortions"
 
 function MainDishMenu() {
   const [mainMenu, setMainMenu] = useState([]);
+  
   useEffect(() => {
     fetch("../data/foods.json")
       .then((response) => response.json())
