@@ -3,6 +3,7 @@ import "../css/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import { Dropdown } from "react-bootstrap";
 import SearchForm from "./SearchForm";
 const HeaderMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -131,11 +132,29 @@ const HeaderMenu = () => {
               </li>
               <li className="userBusketList">
                 <NavLink to="/userProfile">
-                  <div className="userBusketElement">
-                    <img src="/icons/usericon.svg" />
-                    <a href="">Хэрэглэгч</a>
-                  </div>
+                  <Dropdown className="dDown">
+                    {" "}
+                    <Dropdown.Toggle className="dDown" id="dropdown-basic">
+                      {" "}
+                      Хэрэглэгч{" "}
+                    </Dropdown.Toggle>{" "}
+                    <Dropdown.Menu>
+                      {" "}
+                      <Dropdown.Item href="#http://localhost:3000/userProfile">
+                        Хэрэглэгчийн мэдээлэл
+                      </Dropdown.Item>{" "}
+                      <Dropdown.Item href="#/action-2">
+                        {" "}
+                        Миний захиалгууд{" "}
+                      </Dropdown.Item>{" "}
+                      <Dropdown.Item href="#/action-3">
+                        {" "}
+                        Гарах{" "}
+                      </Dropdown.Item>{" "}
+                    </Dropdown.Menu>{" "}
+                  </Dropdown>
                 </NavLink>
+
               </li>
             </ul>
           </div>
