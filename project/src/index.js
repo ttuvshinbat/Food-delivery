@@ -9,11 +9,11 @@ import { FoodContext, FoodProvider } from './contexts/FoodPortions';
 
 ReactDOM.render(
   <React.StrictMode>
-    <FoodContext.Provider>
+    <FoodProvider>
     <UserProvider>
       <App />
     </UserProvider>
-    </FoodContext.Provider>
+    </FoodProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
