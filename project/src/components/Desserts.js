@@ -3,26 +3,26 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { getAllFood } from "../services/foodService";
-
+import { useFood } from "../contexts/FoodPortions"
 function Desserts() {
-  const [foods, setFoods] = useState([]);
+
+  const [mainMenu, setMainMenu] = useState([]);
+  const [foods] = useFood()
 
   useEffect(() => {
-    getAllFood()
-      .then(res => res.json())
-      .then(data => setFoods(data.data))
-  }, []);
+    setMainMenu(foods
+      .filter((p) => {
+        return p.category === "Үндсэн хоол"
+      }).slice(4, 8))
 
-
-  let desserts = foods.filter((p) => p.category === "амттан").slice(0, 4);
+  }, [foods]);
 
   return (
     <Container>
       <div className="row">
-        {desserts.map((i) => {
+        {mainMenu.map((data) => {
           return (
-            <Card data={i} key={i._id}
+            <Card data={data} key={data._id}
             />
           );
         })}

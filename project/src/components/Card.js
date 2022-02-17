@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { Col, Modal } from "react-bootstrap";
 import '../css/card.css'
 import TestModal from './ExampleModal'
-import { useFood } from "../contexts/FoodPortions"
 
 const Card = (props) => {
-    const [foods] = useFood()
-    console.log(props.img)
     const [showModal, setShowModal] = useState(false)
-    let cards = props.sales ? (
+
+    const data = props.data;
+    let cards = data.sales ? (
+
         <div className="card"
         >
-            <img src={props.img} alt="" />
-            <div className="badge">{props.percent}%</div>
-            <p>{props.name}</p>
+            <img src={'https://mtars-fooddelivery.s3.ap-southeast-1.amazonaws.com' + data.image} alt="" />
+            <div className="badge">{data.percent}%</div>
+            <p>{data.name}</p>
             <div class="middle">
                 <img className="hoverImg" src="/icons/whiteMarket.svg" alt="" />
                 <div class="hoverText">Сагслах</div>
@@ -26,14 +26,14 @@ const Card = (props) => {
     ) : (
         <div className="card"
         >
-            <img src={props.img} />
+            <img src={'https://mtars-fooddelivery.s3.ap-southeast-1.amazonaws.com' + data.image} />
             <div class="middle">
                 <img className="hoverImg" src="/icons/whiteMarket.svg" alt="" />
                 <div class="hoverText">Сагслах</div>
             </div>
-            <p>{props.name}</p>
+            <p>{data.name}</p>
             <div className="price">
-                <p className="activePrice">{new Intl.NumberFormat().format(props.price)}₮ </p>
+                <p className="activePrice">{new Intl.NumberFormat().format(data.price)}₮ </p>
             </div>
         </div>
 
