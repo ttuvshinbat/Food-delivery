@@ -10,7 +10,7 @@ export const FoodProvider = (props) =>{
         foodService
         .getAllFood()
         .then((response)=> response.json())
-        .then((data) =>{
+        .then((data) =>{console.log(data)
             if(data.success){
                 setFoods(data.data)
             }
