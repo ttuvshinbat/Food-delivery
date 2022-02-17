@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Col, Modal } from "react-bootstrap";
 import '../css/card.css'
 import TestModal from './ExampleModal'
+import { useFood } from "../contexts/FoodPortions"
 
 const Card = (props) => {
-
-    console.log(props)
+    const [foods] = useFood()
+    console.log(props.img)
     const [showModal, setShowModal] = useState(false)
     let cards = props.sales ? (
         <div className="card"
@@ -35,7 +36,9 @@ const Card = (props) => {
                 <p className="activePrice">{new Intl.NumberFormat().format(props.price)}₮ </p>
             </div>
         </div>
+
     )
+
 
     return (
         <>

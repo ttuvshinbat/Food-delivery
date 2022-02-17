@@ -5,7 +5,9 @@ import { faBars, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import SearchForm from "./SearchForm";
+import {useUser} from "../contexts/UserContext"
 const HeaderMenu = () => {
+  const [user, setUser]= useUser()
   const [showMenu, setShowMenu] = useState(false);
   let menu;
   if (showMenu) {
@@ -70,6 +72,12 @@ const HeaderMenu = () => {
       </div>
     );
   }
+  const handleSelect = (e)=>{
+    if(e=== "/"){
+      setUser(null)
+      localStorage.clear()
+    }
+  }
 
   return (
     <nav>
@@ -123,12 +131,32 @@ const HeaderMenu = () => {
                 </div>
               </li>
               <li className="userBusketList">
-                <NavLink to="/login">
-                  <div className="userBusketElement">
-                    <img src="/icons/usericon.svg" />
-                    <a href="">Нэвтрэх</a>
-                  </div>
-                </NavLink>
+                {user ? (
+                  <Dropdown onSelect={handleSelect}>
+                  <Dropdown.Toggle variant="outline-none" id="dropdown-basic">
+                    {user.userName}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                  <NavLink to="/userProfile">
+                    <Dropdown.Item href="#/action-1">
+                    Хэрэглэгчийн мэдээлэл
+                    </Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">
+                    Миний захиалгууд
+                    </Dropdown.Item>
+                    <Dropdown.Item href="/">
+                    гарах
+                    </Dropdown.Item>
+                  </NavLink>
+                  </Dropdown.Menu>
+                  </Dropdown>
+                ):( <NavLink to="/login">
+                <div className="userBusketElement">
+                  <img src="/icons/usericon.svg" />
+                  <a href="">Нэвтрэх</a>
+                </div>
+              </NavLink>)}
+               
               </li>
               <li className="userBusketList">
                 <NavLink to="/userProfile">
