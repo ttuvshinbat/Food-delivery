@@ -15,6 +15,7 @@ function Home() {
             <Slider />
             <InfoPanel />
             <CategoryLabel />
+            
 
         </div>
     );

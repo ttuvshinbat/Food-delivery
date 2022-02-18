@@ -3,6 +3,7 @@ import { useState } from 'react';
 import googlemaps from '../img/maps.jpeg'
 import '../css/delivery.css';
 import DeliveryZone from './Map';
+import { getBasketinfo } from '../services/basketService';
 
 //conflict tei holbootoi aldaa zasahiin tuld end xomment bichij bn
 const Delivery = () => {
@@ -19,6 +20,9 @@ const Delivery = () => {
         }
         houseData()
     }, [])
+    useEffect(() => {
+        getBasketinfo("ttuvshinbat@yahoo.com")
+    },[])
     let sliced16 = house.slice(0, 17)
     let sliced5 = house.slice(0, 5)
 
