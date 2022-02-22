@@ -1,5 +1,5 @@
 const loginUser = async (credentials) => {
-    return await fetch("http://52.221.191.153/admin/login",
+    return await fetch("https://dev-api.mstars.mn/admin/login",
         {
             method: "POST",
             headers: {
@@ -12,7 +12,7 @@ const loginUser = async (credentials) => {
 
 
 const registerUser = async (credentials) => {
-    return await fetch("http://52.221.191.153/admin/register",
+    return await fetch("https://dev-api.mstars.mn/admin/register/",
         {
             method: "POST",
             headers: {

@@ -10,7 +10,7 @@ const CategoryLabel = () => {
         <div className="container my-5 pb-5">
             <div className="row border-b mx-3 my-4">
                 <p className="col-6 hmm fw-bold ms-2  ">Хямдралтай</p>
-                <button className="col-2 ondor py-2 px-3 arrow">
+                <button className="col-2 ondor py-2 pe-0 me-0  arrow text-end">
                     <span className="inactive-10">Бүгдийг харах</span>
                     <span className="orgon">&#62;</span> </button>
 

@@ -1,7 +1,7 @@
 
 
 export const getAllFood = async () =>{
-    return await fetch ('http://52.221.191.153/api/foods', {
+    return await fetch ('https://dev-api.mstars.mn/api/foods', {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

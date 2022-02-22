@@ -2,7 +2,7 @@ export const getBasketinfo = async (userEmail) => {
     const token =localStorage.getItem("token");
     console.log(token)
     console.log(userEmail)
-    return await fetch("http://52.221.191.153/api/basket-info", {
+    return await fetch("https://dev-api.mstars.mn/api/basket-info", {
         method : "POST",
         headers: {
             "Content-Type": "application/json",
