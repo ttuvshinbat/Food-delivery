@@ -13,11 +13,11 @@ function Sales() {
   // let mainSales = sale.filter((i) => i.sales === true).slice(0, 4);
   const [foods] = useFood()
   const [mainSales, setmainSales] = useState([])
-
+console.log(foods)
   useEffect(() => {
     setmainSales(foods
       .filter((data) => {
-        return data.sales === true
+        return data.discount != 0
       }).slice(0, 4))
   }, [foods])
   return (

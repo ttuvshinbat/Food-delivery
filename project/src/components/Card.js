@@ -7,7 +7,8 @@ const Card = (props) => {
     const [showModal, setShowModal] = useState(false)
 
     const data = props.data;
-    let cards = data.sales ? (
+    
+    let cards = data.discount ? (
 
         <div className="card"
         >
@@ -19,8 +20,8 @@ const Card = (props) => {
                 <div class="hoverText">Сагслах</div>
             </div>
             <div className="price">
-                <p className="activePrice">{new Intl.NumberFormat().format(props.price - props.price * props.percent / 100)}₮ </p>
-                <strike className="strike-dark">{new Intl.NumberFormat().format(props.price)}₮ </strike>
+                <p className="activePrice">{new Intl.NumberFormat().format(data.price - data.price * data.discount / 100)}₮ </p>
+                <strike className="strike-dark">{new Intl.NumberFormat().format(data.price)}₮ </strike>
             </div>
         </div>
     ) : (

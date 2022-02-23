@@ -3,6 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import '../css/modal.css'
 import AddFood from './AddFood';
 function TestModal(props) {
+    console.log(props.data.data)
     const data=props.data.data
     const [show, setShow] = useState(true);
     const handleClose = () => {
