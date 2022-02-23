@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import '../css/modal.css'
 import AddFood from './AddFood';
 function TestModal(props) {
-    console.log(props)
+    const data=props.data.data
     const [show, setShow] = useState(true);
     const handleClose = () => {
         setShow(false);
@@ -16,17 +16,17 @@ function TestModal(props) {
         <>
             <Modal dialogClassName="modal-dialog" show={show} onHide={handleClose} centered>
                 <div className=' my-modal '>
-                    <img className='modalimg' src={props.data.img} alt=""
+                    <img className='modalimg' src={'https://mtars-fooddelivery.s3.ap-southeast-1.amazonaws.com' + data.image} alt=""
                     />
                     <div className='modalMain'>
                         <div className='modalContent row '>
                             <div className='NameAndPrice'>
-                                <div className='modalHeader'>{props.data.name}</div>
+                                <div className='modalHeader'>{data.name}</div>
                                 {price}
                             </div>
                             <div>
                                 <h5 className='modalHeader'>Орц</h5>
-                                <p className='modalIngredients'>{props.data.ingredients}</p>
+                                <p className='modalIngredients'>{data.ingredients}</p>
                             </div>
 
                             <AddFood />
