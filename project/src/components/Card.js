@@ -13,7 +13,7 @@ const Card = (props) => {
         <div className="card"
         >
             <img src={'https://mtars-fooddelivery.s3.ap-southeast-1.amazonaws.com' + data.image} alt="" />
-            <div className="badge">{data.percent}%</div>
+            <div className="badge">{data.discount}%</div>
             <p>{data.name}</p>
             <div class="middle">
                 <img className="hoverImg" src="/icons/whiteMarket.svg" alt="" />
