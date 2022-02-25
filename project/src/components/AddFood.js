@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "../css/addfood.css";
 
-const AddFood = () => {
+const AddFood = (props) => {
   const [count, setCount] = useState(1);
   const [portion, setPortionSize] = useState(1);
   const [activeButton, setActiveButton] = useState("add1");
-
+console.log(props)
   const handlePortion = (size) => {
     setPortionSize(() => size);
   };
@@ -63,7 +63,23 @@ const AddFood = () => {
 
       <button
         className="orderButton"
-        onClick={() => sendFoodCount(count, portion)}
+        onClick={() => sendFoodCount(count, portion),
+       () => {
+        
+fetch("https://dev-api.mstars.mn/api/basket-info", {
+  method : "POST",
+  headers: {
+      "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+   h: activeButton === "add1" ? 1 : 2,
+  count: count,
+    name : props.name  
+      
+  }),
+})
+
+       } }
       >
         Захиалах
       </button>

@@ -15,7 +15,6 @@ const Delivery = () => {
                 .then(response => response.json())
                 .then(data => {
                     setData(data)
-                    console.log(house)
                 })
         }
         houseData()

@@ -3,22 +3,17 @@ import Card from "../components/Card";
 import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useFood } from "../contexts/FoodPortions"
-function Sales(prop) {
-  console.log(prop)
-  // const [sale, setSale] = useState([]);
-  // useEffect(() => {
-  //   fetch("../data/foods.json")
-  //     .then((response) => response.json())
-  //     .then((data) => setSale(data));
-  // }, []);
-  // let mainSales = sale.filter((i) => i.sales === true).slice(0, 4);
+function All(props) {
+
+ 
   const [foods] = useFood()
-  const [mainSales, setmainSales] = useState([])
-console.log(foods)
+  const [mainSales, setMainSales] = useState([])
+
   useEffect(() => {
-    setmainSales(foods
+   
+    setMainSales(foods
       .filter((data) => {
-        switch(prop.type){
+        switch(props.type){
           case "Хямдралтай" :
         return data.discount !== 0;
         case "Үндсэн хоол" :
@@ -32,7 +27,7 @@ console.log(foods)
         }
        
       }).slice(0, 4))
-  }, [foods], prop.type)
+  }, [foods], props.type)
   return (
     <Container>
       <div className="row">
@@ -45,4 +40,4 @@ console.log(foods)
     </Container>
   );
 }
-export default Sales;
+export default All;

@@ -30,7 +30,7 @@ function TestModal(props) {
                                 <p className='modalIngredients'>{data.ingredients}</p>
                             </div>
 
-                            <AddFood />
+                            <AddFood name={data.name} />
                         </div>
                     </div>
                     <button className='closeButton' onClick={handleClose}>x</button>
