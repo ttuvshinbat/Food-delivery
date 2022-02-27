@@ -5,9 +5,8 @@ import TestModal from './ExampleModal'
 
 const Card = (props) => {
     const [showModal, setShowModal] = useState(false)
-console.log(props)
     const data = props.data;
-    
+
     let cards = data.discount ? (
 
         <div className="card"
