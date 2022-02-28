@@ -3,7 +3,8 @@ import "../css/userProfile.css";
 import TextInput from "./TextInput";
 import { Modal, Button } from "react-bootstrap";
 import "../css/button.css";
-import Swal from "sweetalert2";
+import { Swal } from "sweetalert2";
+
 
 const UserProfile = () => {
 

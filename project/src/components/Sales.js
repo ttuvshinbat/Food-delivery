@@ -3,9 +3,8 @@ import Card from "../components/Card";
 import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useFood } from "../contexts/FoodPortions"
-function All(props) {
+function Sales(prop) {
 
- 
   const [foods] = useFood()
   const [mainSales, setMainSales] = useState([])
 
@@ -13,21 +12,18 @@ function All(props) {
    
     setMainSales(foods
       .filter((data) => {
-        switch(props.type){
-          case "Хямдралтай" :
-        return data.discount !== 0;
-        case "Үндсэн хоол" :
-          return data.category === "Үндсэн хоол";
-          case "Салад ба зууш" :
-          return data.category === "Салад ба зууш";
-          case "Амттан" :
-          return data.category === "Амттан";
-          
-
+        switch (prop.type) {
+          case "Хямдралтай":
+            return data.discount !== 0;
+          case "Үндсэн хоол":
+            return data.category === "Үндсэн хоол";
+          case "Салад ба зууш":
+            return data.category === "Салад ба зууш";
+          case "Амттан":
+            return data.category === "Амттан";
         }
-       
       }).slice(0, 4))
-  }, [foods], props.type)
+  }, [foods], prop.type)
   return (
     <Container>
       <div className="row">
@@ -40,4 +36,4 @@ function All(props) {
     </Container>
   );
 }
-export default All;
+export default Sales;

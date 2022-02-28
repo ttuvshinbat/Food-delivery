@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, Switch } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
 // import SearchForm from "./SearchForm";
 
@@ -14,6 +15,15 @@ import CartSidebar from "./CartSidebar";
 const HeaderMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [user, setUser] = useUser();
+  let search;
+  let history = useHistory()
+  function handleSubmit (e){
+    e.preventDefault()
+    history.push(`search?q=${search.value}`)
+
+
+  }
+  
   let menu;
   if (showMenu) {
     menu = (
@@ -132,11 +142,15 @@ const HeaderMenu = () => {
             </li>
           </ul>
           <div className="icons">
-            <input
+            <form action="" onSubmit={handleSubmit}>
+            <input 
+            
+            ref={(data) => search = data}
               className="searchBox"
               type="text"
               placeholder="&#128269; Хайх"
             />
+            </form>
             <img className="searchIcon" src="/icons/searchicon.svg" />
             <img className="mobileUser" src="/icons/mobileuser.svg" />
             <ul className="userBusket">

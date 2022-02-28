@@ -72,6 +72,7 @@ fetch("https://dev-api.mstars.mn/api/basket-info", {
       "Content-Type": "application/json",
   },
   body: JSON.stringify({
+    
    h: activeButton === "add1" ? 1 : 2,
   count: count,
     name : props.name  
