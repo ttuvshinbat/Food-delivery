@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap';
 import '../css/modal.css'
 import AddFood from './AddFood';
+
 function TestModal(props) {
-    console.log(props.data.data)
     const data=props.data.data
     const [show, setShow] = useState(true);
     const handleClose = () => {
@@ -30,7 +30,7 @@ function TestModal(props) {
                                 <p className='modalIngredients'>{data.ingredients}</p>
                             </div>
 
-                            <AddFood name={data.name} />
+                            <AddFood name={data.name, data.portion} />
                         </div>
                     </div>
                     <button className='closeButton' onClick={handleClose}>x</button>
