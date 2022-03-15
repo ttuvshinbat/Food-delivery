@@ -12,7 +12,7 @@ export const addItem = async(props) =>{
         body : JSON.stringify({
             user_email: data.email,
             food_id: props.food_id,
-            quantity: props.quantity,
+            quantity: props.count,
             token:token
         }),
     })

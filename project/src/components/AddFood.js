@@ -11,6 +11,7 @@ const AddFood = (props) => {
   const handlePortion = (size) => {
     setPortionSize(() => size);
   };
+  console.log(count)
 
 
   const handleCounter = (num) => {
@@ -79,7 +80,7 @@ const AddFood = (props) => {
         onClick={
          
             addItem( ({
-              quantity: count,
+              count: count,
              food_id : props.data._id
           })  )
 

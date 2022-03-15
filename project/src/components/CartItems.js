@@ -2,8 +2,9 @@ import React from "react";
 import Meal from "../img/meal.png"
 import DeleteMeal from "../img/delete_meal.png"
 import "../css/cartItems.css"
-
+import {  getBasketinfo } from "../services/basketService";
 function CartItems() {
+
     return (
         <div className="main-body">
             <div className="cart-items">

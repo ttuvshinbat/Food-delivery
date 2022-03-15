@@ -5,6 +5,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, Switch } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import { getBasketinfo } from "../services/basketService";
 
 // import SearchForm from "./SearchForm";
 
@@ -158,7 +159,7 @@ const HeaderMenu = () => {
                 <div className="userBusketElement">
                   {/* <img src="/icons/busketicon.svg" /> */}
                   {/* <a href="">Сагс</a> */}
-                  <CartSidebar />
+                  <CartSidebar onClick={getBasketinfo()} />
                 </div>
               </li>
               <li className="userBusketList">
