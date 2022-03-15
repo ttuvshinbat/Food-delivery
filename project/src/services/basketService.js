@@ -1,13 +1,19 @@
-export const addItem = async(userEmail) =>{
+export const addItem = async(props) =>{
     const token = localStorage.getItem("token");
+    const data = JSON.parse(localStorage.userInfo)
+  console.log(props)
+  console.log(data.email)
+  
     return await fetch("https://dev-api.mstars.mn/api/basket",{
         method : "POST", 
         headers : {
-            "Content-Type": "application/json-info"
+            "Content-Type": "application/json"
         },
         body : JSON.stringify({
-            user_email: userEmail,
-            token: token
+            user_email: data.email,
+            food_id: props.food_id,
+            quantity: props.quantity,
+            token:token
         }),
     })
     .then((response) => response.json())
@@ -15,17 +21,21 @@ export const addItem = async(userEmail) =>{
 }
 
 
-export const getBasketinfo = async (userEmail) => {
+export const getBasketinfo = async (props) => {
     const token =localStorage.getItem("token");
+   console.log(localStorage)
+    
+    
     console.log(token)
-    console.log(userEmail)
+    console.log(props)
+
     return await fetch("https://dev-api.mstars.mn/api/basket-info", {
         method : "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            user_email: userEmail,
+            user_email: "ttuvshinbat@yahoo.com",
             token: token,
         }),
     })

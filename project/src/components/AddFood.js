@@ -4,6 +4,7 @@ import "../css/addfood.css";
 import { basketService, getBasketinfo , addItem} from "../services/basketService";
 
 const AddFood = (props) => {
+  
   const [count, setCount] = useState(1);
   const [portion, setPortionSize] = useState(1);
   const [activeButton, setActiveButton] = useState("add1");
@@ -75,10 +76,13 @@ const AddFood = (props) => {
 
       <button
         className="orderButton"
-        onClick={() => sendFoodCount(count, portion),
-          useEffect(() => {
-            addItem({ body : {count : count, portion : portion} })
-})
+        onClick={
+         
+            addItem( ({
+              quantity: count,
+             food_id : props.data._id
+          })  )
+
 }
       >
         Захиалах
