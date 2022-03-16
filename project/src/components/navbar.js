@@ -159,7 +159,7 @@ const HeaderMenu = () => {
                 <div className="userBusketElement">
                   {/* <img src="/icons/busketicon.svg" /> */}
                   {/* <a href="">Сагс</a> */}
-                  <CartSidebar onClick={getBasketinfo()} />
+                  <CartSidebar  />
                 </div>
               </li>
               <li className="userBusketList">
