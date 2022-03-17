@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import "../css/addfood.css";
-import { basketService, getBasketinfo , addItem} from "../services/basketService";
+import {
+  basketService,
+  getBasketinfo,
+  addItem,
+} from "../services/basketService";
 
 const AddFood = (props) => {
-  
   const [count, setCount] = useState(1);
   const [portion, setPortionSize] = useState(1);
   const [activeButton, setActiveButton] = useState("add1");
   const handlePortion = (size) => {
     setPortionSize(() => size);
   };
-  const itemAdder = ()=>{          
-    addItem( ({
+  const itemAdder = () => {
+    addItem({
       count: count,
-      food_id : props.data._id,
-   
-  })  )
-  }
-
+      food_id: props.data._id,
+    });
+  };
 
   const handleCounter = (num) => {
     setCount((count) => (count > 0 ? (count += num) : (count = 1)));
@@ -27,7 +28,7 @@ const AddFood = (props) => {
   //      e.preventDefault()
   //      basketService
   //      .getBasketinfo({
-          
+
   //      })
   //      .then((res)=> res.json())
   //      .then((data) =>{
@@ -35,7 +36,7 @@ const AddFood = (props) => {
   //      } )
 
   const sendFoodCount = (count, size) => {
-    console.log("Order:", count, 'foodId', "portion:", size);
+    console.log("Order:", count, "foodId", "portion:", size);
   };
 
   return (
@@ -81,10 +82,7 @@ const AddFood = (props) => {
         </button>
       </div>
 
-      <button
-        className="orderButton"
-        onClick={itemAdder}
-      >
+      <button className="orderButton" onClick={itemAdder}>
         Захиалах
       </button>
     </div>
