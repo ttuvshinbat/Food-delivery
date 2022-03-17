@@ -16,11 +16,7 @@ export const addItem = async (props) => {
       quantity: props.count,
       token: token,
     }),
-  })
-    .then((data) => data.json())
-    .then((data) => {
-      console.log(data);
-    });
+  }).then((data) => data.json());
 };
 
 export const getBasketinfo = async () => {

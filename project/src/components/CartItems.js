@@ -2,23 +2,18 @@ import React, { useEffect, useState } from "react";
 import Meal from "../img/meal.png";
 import DeleteMeal from "../img/delete_meal.png";
 import "../css/cartItems.css";
-import {
-  basketService,
-  addItem,
-  update,
-  deleteBasket,
-} from "../services/basketService";
+import { basketService } from "../services/basketService";
+import { NavLink, Switch } from "react-router-dom";
 function CartItems() {
   const [first, setfirst] = useState({ success: false });
   const [changed, setChanged] = useState(false);
-  const [changed1, setChanged1] = useState();
-  const [changed2, setChanged2] = useState();
+
   useEffect(() => {
     basketService
       .getBasketinfo()
       .then((res) => res.json())
       .then((data) => setfirst(data));
-  }, [changed, changed1, changed2]);
+  }, [changed]);
 
   const deletedBasket = async (d) => {
     basketService
@@ -30,8 +25,12 @@ function CartItems() {
         }
       });
   };
-  const updateBasket = async (q, id) => {
-    basketService.addItem({ count: q, food_id: id });
+  const updateBasket = (q, id) => {
+    basketService.addItem({ count: q, food_id: id }).then((data) => {
+      if (data.success) {
+        setChanged(!changed);
+      }
+    });
   };
 
   const el = first.baskets;
@@ -41,7 +40,7 @@ function CartItems() {
     <div className="main-body">
       {first.success === true ? (
         el.map((data) => {
-          summit = summit + data.product.price;
+          summit = (summit + data.product.price) * data.quantity;
           return (
             <div>
               <div className="cart-items">
@@ -59,19 +58,13 @@ function CartItems() {
                   <p className="cart-item-name">{data.product.name}</p>
                   <p className="cart-item-price">{data.product.price}</p>
                   <div className="buttons">
-                    <button
-                      onClick={() => {
-                        {
-                          setChanged1(updateBasket(-1, data.product._id));
-                        }
-                      }}
-                    >
+                    <button onClick={() => updateBasket(-1, data.product._id)}>
                       -
                     </button>
                     <p>{data.quantity}</p>
                     <button
                       onClick={() => {
-                        setChanged2(updateBasket(1, data.product._id));
+                        updateBasket(1, data.product._id);
                       }}
                     >
                       +
@@ -94,7 +87,9 @@ function CartItems() {
       )}
       <div className="order-section">
         <p className="totalPrice">{summit}</p>
-        <button className="order-button">Захиалах</button>
+        <NavLink to="/address">
+          <button className="order-button">Захиалах</button>
+        </NavLink>
       </div>
     </div>
   );

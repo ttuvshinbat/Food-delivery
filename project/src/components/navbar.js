@@ -17,14 +17,12 @@ const HeaderMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [user, setUser] = useUser();
   let search;
-  let history = useHistory()
-  function handleSubmit (e){
-    e.preventDefault()
-    history.push(`search?q=${search.value}`)
-
-
+  let history = useHistory();
+  function handleSubmit(e) {
+    e.preventDefault();
+    history.push(`search?q=${search.value}`);
   }
-  
+
   let menu;
   if (showMenu) {
     menu = (
@@ -71,10 +69,12 @@ const HeaderMenu = () => {
               <div className="dropMenuImg">
                 <img src="/icons/rounduser.svg" alt="" />
               </div>
-              <NavLink className={"dropMenuText"} to="/userProfile"
-              onClick={() => {
-                setShowMenu(!showMenu);
-              }}
+              <NavLink
+                className={"dropMenuText"}
+                to="/userProfile"
+                onClick={() => {
+                  setShowMenu(!showMenu);
+                }}
               >
                 Хэрэглэгчийн мэдээлэл
               </NavLink>
@@ -94,12 +94,12 @@ const HeaderMenu = () => {
       </div>
     );
   }
-  const handleSelect = (e)=>{
-    if (e === "/"){
-      setUser(null)
-      localStorage.clear()
+  const handleSelect = (e) => {
+    if (e === "/") {
+      setUser(null);
+      localStorage.clear();
     }
-  }
+  };
 
   return (
     <nav>
@@ -144,13 +144,12 @@ const HeaderMenu = () => {
           </ul>
           <div className="icons">
             <form action="" onSubmit={handleSubmit}>
-            <input 
-            
-            ref={(data) => search = data}
-              className="searchBox"
-              type="text"
-              placeholder="&#128269; Хайх"
-            />
+              <input
+                ref={(data) => (search = data)}
+                className="searchBox"
+                type="text"
+                placeholder="&#128269; Хайх"
+              />
             </form>
             <img className="searchIcon" src="/icons/searchicon.svg" />
             <img className="mobileUser" src="/icons/mobileuser.svg" />
@@ -159,22 +158,21 @@ const HeaderMenu = () => {
                 <div className="userBusketElement">
                   {/* <img src="/icons/busketicon.svg" /> */}
                   {/* <a href="">Сагс</a> */}
-                  <CartSidebar  />
+                  <CartSidebar />
                 </div>
               </li>
               <li className="userBusketList">
                 {user ? (
-                  <Dropdown onSelect={handleSelect} >
+                  <Dropdown onSelect={handleSelect}>
                     <Dropdown.Toggle variant="outline-none" id="dropdown-basic">
-                        {user.userName}
+                      {user.userName}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
                       <NavLink to="/userProfile">
-                      <Dropdown.Item href="#/action-1">
-                        Хэрэглэгчийн мэдээлэл
-                      </Dropdown.Item>
-
+                        <Dropdown.Item href="#/action-1">
+                          Хэрэглэгчийн мэдээлэл
+                        </Dropdown.Item>
                       </NavLink>
                       <Dropdown.Item href="#/action-2">
                         Миний захиалгууд
