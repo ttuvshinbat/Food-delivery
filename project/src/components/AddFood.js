@@ -1,33 +1,22 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import "../css/addfood.css";
-import { basketService, getBasketinfo , addItem} from "../services/basketService";
+import { addItem, getBasketinfo } from "../services/basketService"
 
-const AddFood = (props) => {
+const AddFood = () => {
   const [count, setCount] = useState(1);
   const [portion, setPortionSize] = useState(1);
   const [activeButton, setActiveButton] = useState("add1");
+
   const handlePortion = (size) => {
     setPortionSize(() => size);
   };
 
-
   const handleCounter = (num) => {
     setCount((count) => (count > 0 ? (count += num) : (count = 1)));
   };
-  // const sendFoodCount =(e)=>{
-  //      e.preventDefault()
-  //      basketService
-  //      .getBasketinfo({
-          
-  //      })
-  //      .then((res)=> res.json())
-  //      .then((data) =>{
-
-  //      } )
 
   const sendFoodCount = (count, size) => {
-    console.log("Order:", count, 'foodId', "portion:", size);
+    console.log("Order:", count, 'foodId,', "portion:", size);
   };
 
   return (
@@ -37,9 +26,8 @@ const AddFood = (props) => {
         <div className="modalSizeButtons">
           <button
             id="add1"
-            className={`sizeButton ${
-              activeButton === "add1" ? "activeButton" : ""
-            }`}
+            className={`sizeButton ${activeButton === "add1" ? "activeButton" : ""
+              }`}
             onClick={(event) => {
               setActiveButton("add1");
               handlePortion(1);
@@ -49,9 +37,8 @@ const AddFood = (props) => {
           </button>
           <button
             id="add2"
-            className={`sizeButton ${
-              activeButton === "add2" ? "activeButton" : ""
-            }`}
+            className={`sizeButton ${activeButton === "add2" ? "activeButton" : ""
+              }`}
             onClick={(event) => {
               setActiveButton("add2");
               handlePortion(2);
@@ -75,11 +62,16 @@ const AddFood = (props) => {
 
       <button
         className="orderButton"
-        onClick={() => sendFoodCount(count, portion),
-          useEffect(() => {
-            addItem({ body : {count : count, portion : portion} })
-})
-}
+        onClick={addItem({
+          body: JSON.stringify({
+            count: count,
+            portion: portion
+          })
+        })
+
+
+        }
+
       >
         Захиалах
       </button>

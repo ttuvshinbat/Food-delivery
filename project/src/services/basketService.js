@@ -1,26 +1,25 @@
-export const addItem = async(userEmail) =>{
+export const addItem = async (userEmail) => {
     const token = localStorage.getItem("token");
-    return await fetch("https://dev-api.mstars.mn/api/basket",{
-        method : "POST", 
-        headers : {
+    return await fetch("https://dev-api.mstars.mn/api/basket", {
+        method: "POST",
+        headers: {
             "Content-Type": "application/json-info"
         },
-        body : JSON.stringify({
+        body: JSON.stringify({
             user_email: userEmail,
             token: token
         }),
     })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
+        .then((response) => response.json())
+        .then((data) => console.log(data))
 }
 
 
 export const getBasketinfo = async (userEmail) => {
-    const token =localStorage.getItem("token");
-    console.log(token)
-    console.log(userEmail)
+    const token = localStorage.getItem("token");
+
     return await fetch("https://dev-api.mstars.mn/api/basket-info", {
-        method : "POST",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
@@ -29,8 +28,8 @@ export const getBasketinfo = async (userEmail) => {
             token: token,
         }),
     })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
+        .then((response) => response.json())
+        .then((data) => console.log(data))
 
 }
 export const basketService = {

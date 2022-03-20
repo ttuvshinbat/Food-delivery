@@ -10,28 +10,19 @@ function Search() {
     const values = queryString.parse(search)
     const [foods] = useFood()
     let pro = foods.filter((sda) => sda.name.toLowerCase().includes(values.q))
-    console.log(pro)
+    console.log(values)
 
 
     return (
         <div className="">
-             <div className="row">
-            {pro.map(data =>
-         
-              <div className="col-4">
-              <Cards data={data} />
-              </div>
+            <div className="row">
+                {pro.map(data =>
 
-      
-                    
-           
-
-
-            )}
-                </div>
-
-
-
+                    <div className="col-4">
+                        <Cards data={data} />
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

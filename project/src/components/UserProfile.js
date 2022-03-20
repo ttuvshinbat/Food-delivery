@@ -8,19 +8,19 @@ import { Swal } from "sweetalert2";
 
 const UserProfile = () => {
 
-  const done = () => {
+  // const done = () => {
 
-    let timerInterval;
-    Swal.fire({
-      title: "Хэрэглэгчийн мэдээлэл амжилттай хадгалагдлаа.",
-      timer: 3000,
-      timerProgressBar: true,
-      willClose: () => {
-        clearInterval(timerInterval);
-      },
-    })
+  //   let timerInterval;
+  //   Swal.fire({
+  //     title: "Хэрэглэгчийн мэдээлэл амжилттай хадгалагдлаа.",
+  //     timer: 3000,
+  //     timerProgressBar: true,
+  //     willClose: () => {
+  //       clearInterval(timerInterval);
+  //     },
+  //   })
 
-  }
+  // }
 
 
   return (
@@ -29,7 +29,7 @@ const UserProfile = () => {
 
       <TextInput type={"text"} name={"Нэр"} />
       <TextInput type={"tel"} name={"Утасны дугаар"} />
-      <Button onClick={done} className="signupTabletView ">
+      <Button /*onClick={ done }*/ className="signupTabletView ">
         Хадгалах
       </Button>
     </div>
