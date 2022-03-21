@@ -3,7 +3,9 @@ import navlogo from '../icons/navlogo.svg';
 import "../css/adress.css";
 import { useState, useEffect } from "react";
 import { basketService } from "../services/basketService";
-
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 const AddressVertification = () => {
 
     const [state, setstate] = useState(0)
@@ -38,7 +40,7 @@ const AddressVertification = () => {
         <div className="container">
             <div className="row my-2 py-2 ">
                 <div className="col-12 d-flex flex-column    col-lg-6">
-                    <p className="d-none d-md-block m-2 p-2 col-md-8  col-xl-7 shargal11 ">Алхам 1 > Хаягийн мэдээлэл оруулах</p>
+                    <p className="d-none d-md-block m-2 p-2 col-md-8  col-xl-7 shargal11 ">Алхам 1  <FontAwesomeIcon icon={faAngleRight} /> Хаягийн мэдээлэл оруулах</p>
                     <div className="gadna my-3 ondorOghoos " >
                         <form action="" className="forms m-auto">
                             <p className="p-2 m-2 col-12 d-md-none text-shargal">Хаягын мэдээлэл</p>
@@ -88,12 +90,13 @@ const AddressVertification = () => {
 
                 </div>
                 <div className="col-12 d-none d-md-block col-lg-6  ">
-                    <p className="d-none d-md-block my-2 py-2 col-md-8 col-xl-7  shargal11 ">Алхам 2 > Захиалага баталгаажуулах</p>
+                    <p className="d-none d-md-block my-2 py-2 col-md-8 col-xl-7  shargal11 ">Алхам 2 <FontAwesomeIcon icon={faAngleRight} /> Захиалага баталгаажуулах</p>
                     <form action="" >
 
                         <div className="gadna my-4 d-flex flex-column  justify-content-between ondorOghoos   " >
                             {first.success === true ? (
                                 el.map(data => {
+
                                     if (data.product.discount === 0) {
                                         summit += data.product.price * data.quantity
                                     }
@@ -102,7 +105,7 @@ const AddressVertification = () => {
                                     }
 
                                     return (
-                                        <div className="align-items-center d-flex flex-column justify-content-center ">
+                                        <div className="align-items-center d-flex flex-column justify-content-center " key={data.product._id}>
                                             <p className="py-2 my-2"> {data.product.name} ({data.quantity})   <span className="text-shargal px-5 mx-5">{data.product.discount === 0 ? data.product.price * data.quantity : data.product.price * (100 - data.product.discount) / 100 * data.quantity}₮
                                                 <button type="button " className="btn-close mx-5" aria-label="Close"></button> </span>   </p>
                                         </div>
