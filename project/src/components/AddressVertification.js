@@ -1,27 +1,39 @@
 import React from "react";
 import navlogo from '../icons/navlogo.svg';
 import "../css/adress.css";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { basketService } from "../services/basketService";
 
 const AddressVertification = () => {
-    
+
     const [state, setstate] = useState(0)
     const togleShow = (event) => {
         setstate(event.target.value)
-       
+
     }
 
     const [state1, setstate1] = useState(0)
     const togleShow1 = (event) => {
-         let test = event.target.value;
+        let test = event.target.value;
         setstate1(test)
     }
     const [state2, setstate2] = useState(0)
     const togleShow2 = (event) => {
         setstate2(event.target.value)
     }
+    const [first, setfirst] = useState({ success: false });
+    const [changed, setChanged] = useState(false);
 
+
+    useEffect(() => {
+        basketService
+            .getBasketinfo()
+            .then((res) => res.json())
+            .then((data) => setfirst(data));
+    }, [changed]);
+    console.log(first.baskets)
+    const el = first.baskets
+    let summit = 0
     return (
         <div className="container">
             <div className="row my-2 py-2 ">
@@ -77,14 +89,35 @@ const AddressVertification = () => {
                 </div>
                 <div className="col-12 d-none d-md-block col-lg-6  ">
                     <p className="d-none d-md-block my-2 py-2 col-md-8 col-xl-7  shargal11 ">Алхам 2 > Захиалага баталгаажуулах</p>
-                    <form action="" method="POST">
+                    <form action="" >
+
                         <div className="gadna my-4 d-flex flex-column  justify-content-between ondorOghoos   " >
-                            <div className="align-items-center d-flex flex-column justify-content-center ">
-                                <p className="py-2 my-2"> Саламан загас (1)   <span className="text-shargal px-5 mx-5">11800₮ <button type="button " class="btn-close mx-5" aria-label="Close"></button> </span>   </p>
-                                <p className="py-2 my-2"> Саламан загас (1)   <span className="text-shargal px-5 mx-5">11800₮ <button type="button " class="btn-close mx-5" aria-label="Close"></button> </span>   </p>
-                            </div>
+                            {first.success === true ? (
+                                el.map(data => {
+                                    if (data.product.discount === 0) {
+                                        summit += data.product.price * data.quantity
+                                    }
+                                    else {
+                                        summit += data.product.price * (100 - data.product.discount) / 100 * data.quantity
+                                    }
+
+                                    return (
+                                        <div className="align-items-center d-flex flex-column justify-content-center ">
+                                            <p className="py-2 my-2"> {data.product.name} ({data.quantity})   <span className="text-shargal px-5 mx-5">{data.product.discount === 0 ? data.product.price * data.quantity : data.product.price * (100 - data.product.discount) / 100 * data.quantity}₮
+                                                <button type="button " class="btn-close mx-5" aria-label="Close"></button> </span>   </p>
+                                        </div>
+
+
+                                    )
+
+                                })
+                            ) : <div>achaallaj baina</div>
+
+                            }
+
+
                             <div className="lastButton my-2 py-2">
-                                <p className=" marginAvii">Нийт : 25800₮</p>
+                                <p className=" marginAvii">Нийт : {summit}₮</p>
                                 <input className="col-md-7 borderShargal " type="submit" value="Захиалах" name="" id="" />
                             </div>
 
