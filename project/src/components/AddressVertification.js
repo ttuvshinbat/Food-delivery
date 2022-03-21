@@ -104,7 +104,7 @@ const AddressVertification = () => {
                                     return (
                                         <div className="align-items-center d-flex flex-column justify-content-center ">
                                             <p className="py-2 my-2"> {data.product.name} ({data.quantity})   <span className="text-shargal px-5 mx-5">{data.product.discount === 0 ? data.product.price * data.quantity : data.product.price * (100 - data.product.discount) / 100 * data.quantity}₮
-                                                <button type="button " class="btn-close mx-5" aria-label="Close"></button> </span>   </p>
+                                                <button type="button " className="btn-close mx-5" aria-label="Close"></button> </span>   </p>
                                         </div>
 
 
