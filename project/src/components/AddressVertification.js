@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { basketService } from "../services/basketService";
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleRight, } from '@fortawesome/free-solid-svg-icons'
 const AddressVertification = () => {
 
     const [state, setstate] = useState(0)
@@ -44,25 +44,25 @@ const AddressVertification = () => {
                     <div className="gadna my-3 ondorOghoos " >
                         <form action="" className="forms m-auto">
                             <p className="p-2 m-2 col-12 d-md-none text-shargal">Хаягын мэдээлэл</p>
-                            <p classNa me="d-none p-2 col-12 col-md-8 m-2 d-md-block align-items-start turshilt text-shargal"> Хаягаа оруулна уу</p>
+                            <p className="d-none p-2 col-12 col-md-8 m-2 d-md-block align-items-start turshilt text-shargal"> Хаягаа оруулна уу</p>
                             <div className="col-12 col-md-8 my-2 selectbox">
-                                <select name="" id="" onChange={togleShow} className={state == 0 ? "padd p-2 w-100  inputStyle" : "changeCss padd p-2 w-100"}>
-                                    <option selected className="teneg" value="0"> Хан-Уул Дүүрэг </option>
+                                <select id="" onChange={togleShow} className={state == 0 ? "padd p-2 w-100  inputStyle" : "changeCss padd p-2 w-100"}>
+                                    <option className="teneg" value="0"> Хан-Уул Дүүрэг </option>
                                     <option value="1">Баянзүрэх Дүүрэг</option>
                                     <option value="2">СүхБаатар Дүүрэг</option>
                                     <option value="3">Сонгинохайрхан Дүүрэг</option>
                                 </select>
                             </div>
                             <div className="col-12 col-md-8 my-2 selectbox">
-                                <select name="" placeholder="Хороо сонгоно уу" onChange={togleShow1} className={state1 == 0 ? "padd p-2 w-100  inputStyle" : "changeCss padd p-2 w-100"} id="">
-                                    <option selected value="0"> Хороо сонгоно уу</option>
+                                <select placeholder="Хороо сонгоно уу" onChange={togleShow1} className={state1 == 0 ? "padd p-2 w-100  inputStyle" : "changeCss padd p-2 w-100"} id="">
+                                    <option value="0"> Хороо сонгоно уу</option>
                                     <option value="1">2-р Хороо</option>
                                     <option value="2">3-р Хороо</option>
                                 </select>
                             </div>
                             <div className="col-12 col-md-8 my-2 selectbox">
-                                <select name="" onChange={togleShow2} className={state2 == 0 ? "padd p-2 w-100  inputStyle" : "changeCss padd p-2 w-100"} id="">
-                                    <option selected value="0">Байр, гудамж сонгоно уу.</option>
+                                <select onChange={togleShow2} className={state2 == 0 ? "padd p-2 w-100  inputStyle" : "changeCss padd p-2 w-100"} id="">
+                                    <option value="0">Байр, гудамж сонгоно уу.</option>
                                     <option value="1">1-р байр</option>
                                     <option value="2">89-р байр</option>
                                 </select>
