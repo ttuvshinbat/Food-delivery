@@ -4,6 +4,7 @@ import DeleteMeal from "../img/delete_meal.png";
 import "../css/cartItems.css";
 import { basketService } from "../services/basketService";
 import { NavLink, Switch } from "react-router-dom";
+import Delivery from "./Delivery";
 function CartItems() {
   const [first, setfirst] = useState({ success: false });
   const [changed, setChanged] = useState(false);
@@ -102,11 +103,11 @@ function CartItems() {
       <div className="order-section">
         <p className="totalPrice">{summit}</p>
         <NavLink to="/address">
+
           <button className="order-button">Захиалах</button>
         </NavLink>
       </div>
     </div>
   );
 }
-
 export default CartItems;

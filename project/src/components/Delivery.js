@@ -3,11 +3,12 @@ import { useState } from 'react';
 import googlemaps from '../img/maps.jpeg'
 import '../css/delivery.css';
 import DeliveryZone from './Map';
-import { getBasketinfo } from '../services/basketService';
+
 
 //conflict tei holbootoi aldaa zasahiin tuld end xomment bichij bn
 const Delivery = () => {
     const [house, setData] = useState([])
+
 
     useEffect(() => {
         const houseData = async () => {
@@ -19,9 +20,7 @@ const Delivery = () => {
         }
         houseData()
     }, [])
-    useEffect(() => {
-        getBasketinfo("ttuvshinbat@yahoo.com")
-    },[])
+
     let sliced16 = house.slice(0, 17)
     let sliced5 = house.slice(0, 5)
 
@@ -29,7 +28,7 @@ const Delivery = () => {
     return (
 
         <div className='d-flex flex-column'>
-           
+
             <div className='container order-1 row mx-auto '>
                 <p className='mobileOff borderLeft px-3 my-2 py-1 me-4 ms-2 fw-bold'>Хүргэлтийн бүс дэх хаягууд</p>
                 <div id='delivery-1' className='bg-white d-block d-md-none radius py-2 my-3 px-4'>
@@ -149,15 +148,15 @@ const Delivery = () => {
 
             </div>
             <div id="map" className='col-12 d-none container d-lg-block my-5 order-0'>
-            <DeliveryZone />
+                <DeliveryZone />
             </div>
             <div id="map" className='col-12 d-block  d-md-none my-5 order-2'>
-            <DeliveryZone />
+                <DeliveryZone />
             </div>
             <div id="map" className='col-12 d-none d-md-block d-lg-none my-5 order-0'>
-            <DeliveryZone />
+                <DeliveryZone />
             </div>
-          
+
         </div>
 
     )
