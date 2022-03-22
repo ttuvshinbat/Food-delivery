@@ -16,6 +16,7 @@ import CartSidebar from "./CartSidebar";
 const HeaderMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [user, setUser] = useUser();
+  console.log(user);
   let search;
   let history = useHistory();
   function handleSubmit(e) {
@@ -167,7 +168,6 @@ const HeaderMenu = () => {
                     <Dropdown.Toggle variant="outline-none" id="dropdown-basic">
                       {user.userName}
                     </Dropdown.Toggle>
-
                     <Dropdown.Menu>
                       <NavLink to="/userProfile">
                         <Dropdown.Item href="#/action-1">

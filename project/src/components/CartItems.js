@@ -40,7 +40,16 @@ function CartItems() {
     <div className="main-body">
       {first.success === true ? (
         el.map((data) => {
-          summit += data.product.price * data.quantity;
+          console.log(data);
+          if (data.product.discount === 0) {
+            summit += data.product.price * data.quantity;
+          } else {
+            summit +=
+              (data.product.price / 100) *
+              (100 - data.product.discount) *
+              data.quantity;
+          }
+
           return (
             <div>
               <div className="cart-items">
@@ -56,7 +65,12 @@ function CartItems() {
                 </div>
                 <div className="details">
                   <p className="cart-item-name">{data.product.name}</p>
-                  <p className="cart-item-price">{data.product.price}</p>
+                  <p className="cart-item-price">
+                    {data.product.discount === 0
+                      ? data.product.price
+                      : (data.product.price / 100) *
+                        (100 - data.product.discount)}
+                  </p>
                   <div className="buttons">
                     <button onClick={() => updateBasket(-1, data.product._id)}>
                       -

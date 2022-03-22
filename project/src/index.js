@@ -10,9 +10,9 @@ import {FoodProvider } from './contexts/FoodPortions';
 ReactDOM.render(
   <React.StrictMode>
     <FoodProvider>
-    <UserProvider>
-      <App />
-    </UserProvider>
+      <UserProvider>
+        <App />
+      </UserProvider>
     </FoodProvider>
   </React.StrictMode>,
   document.getElementById("root")
