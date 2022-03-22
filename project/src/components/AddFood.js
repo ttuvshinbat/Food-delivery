@@ -14,6 +14,7 @@ const AddFood = (props) => {
   const handlePortion = (size) => {
     setPortionSize(() => size);
   };
+  console.log(props);
   const itemAdder = () => {
     addItem({
       count: count,
@@ -46,8 +47,9 @@ const AddFood = (props) => {
         <div className="modalSizeButtons">
           <button
             id="add1"
-            className={`sizeButton ${activeButton === "add1" ? "activeButton" : ""
-              }`}
+            className={`sizeButton ${
+              activeButton === "add1" ? "activeButton" : ""
+            }`}
             onClick={(event) => {
               setActiveButton("add1");
               handlePortion(1);
@@ -57,8 +59,9 @@ const AddFood = (props) => {
           </button>
           <button
             id="add2"
-            className={`sizeButton ${activeButton === "add2" ? "activeButton" : ""
-              }`}
+            className={`sizeButton ${
+              activeButton === "add2" ? "activeButton" : ""
+            }`}
             onClick={(event) => {
               setActiveButton("add2");
               handlePortion(2);

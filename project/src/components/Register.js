@@ -1,5 +1,3 @@
-
-
 import Buttons from "./Button.js";
 import React from "react";
 import TextInput from "./TextInput.js";
@@ -12,21 +10,21 @@ const Register = () => {
     event.preventDefault();
     userService
       .registerUser({
-
         email: event.target.email.value,
         password: event.target.password.value,
         name: "temka",
-        address: "mongolia"
-
-      }).then(sda => {
-        sda.json()
-      }).then(data => console.log(data))
-
-  }
+        address: "mongolia",
+      })
+      .then((sda) => {
+        sda.json();
+      })
+      .then((data) => console.log(data));
+  };
   return (
-
-    <Form onSubmit={handleSubmit} className="field-contianer d-flex flex-column mt-5 mb-5 align-items-center justify-content-center">
-
+    <Form
+      onSubmit={handleSubmit}
+      className="field-contianer d-flex flex-column mt-5 mb-5 align-items-center justify-content-center"
+    >
       <p className="hmm fw-bold">Бүртгүүлэх</p>
 
       <TextInput type={"email"} name={"И-мэйл"} value="" />
@@ -35,12 +33,12 @@ const Register = () => {
 
       <div className="agreeTo d-flex justify-content-between">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           value=""
           id="flexCheckDefault"
         />
-        <label class="form-check-label" for="flexCheckDefault">
+        <label className="form-check-label" for="flexCheckDefault">
           <a className="mb-4">Үйлчилгээний нөхцөл зөвшөөрөх</a>
         </label>
       </div>

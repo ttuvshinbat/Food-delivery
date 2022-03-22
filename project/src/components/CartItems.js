@@ -41,7 +41,6 @@ function CartItems() {
     <div className="main-body">
       {first.success === true ? (
         el.map((data) => {
-          console.log(data);
           if (data.product.discount === 0) {
             summit += data.product.price * data.quantity;
           } else {
@@ -103,7 +102,6 @@ function CartItems() {
       <div className="order-section">
         <p className="totalPrice">{summit}</p>
         <NavLink to="/address">
-
           <button className="order-button">Захиалах</button>
         </NavLink>
       </div>
