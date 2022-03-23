@@ -2,9 +2,6 @@ export const addItem = async (props) => {
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.userInfo);
 
-  console.log(props);
-  console.log(data.email);
-
   return await fetch("https://dev-api.mstars.mn/api/basket", {
     method: "POST",
     headers: {
@@ -22,7 +19,6 @@ export const addItem = async (props) => {
 export const getBasketinfo = async () => {
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.userInfo);
-  console.log(token);
 
   return await fetch("https://dev-api.mstars.mn/api/basket-info", {
     method: "POST",
@@ -39,10 +35,6 @@ export const getBasketinfo = async () => {
 export const deleteBasket = async (props) => {
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.userInfo);
-
-  console.log(props);
-  console.log(data.email);
-
   return await fetch("https://dev-api.mstars.mn/api/basket", {
     method: "POST",
     headers: {

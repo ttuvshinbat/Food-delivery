@@ -1,25 +1,21 @@
 import React, { useState } from "react";
+import { useSpinner } from "../contexts/WaitSpinner";
 import "../css/addfood.css";
-import {
-  basketService,
-  getBasketinfo,
-  addItem,
-} from "../services/basketService";
-
+import { addItem } from "../services/basketService";
 const AddFood = (props) => {
   const [count, setCount] = useState(1);
   const [portion, setPortionSize] = useState(1);
   const [activeButton, setActiveButton] = useState("add1");
-
+  const [spin, setspin] = useSpinner();
   const handlePortion = (size) => {
     setPortionSize(() => size);
   };
-  console.log(props);
   const itemAdder = () => {
     addItem({
       count: count,
       food_id: props.data._id,
     });
+    props.handleClose();
   };
 
   const handleCounter = (num) => {

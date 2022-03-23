@@ -1,4 +1,4 @@
-import React, { ModalContext } from "react";
+import React, { ModalContext, useState, useEffect } from "react";
 import "./App.css";
 import HeaderMenu from "./components/navbar";
 import Home from "./components/Home";
@@ -19,10 +19,16 @@ import ForgetPassword from "./components/ForgetPassword";
 import NewPassword from "./components/NewPassword";
 import AddressVertification from "./components/AddressVertification";
 import UserProfile from "./components/UserProfile";
+import Spinner from "./components/Spinner";
+import { useSpinner } from "./contexts/WaitSpinner";
+// import { useUser } from "./contexts/UserContext";
 
 function App() {
+  const [showSpin] = useSpinner();
+
   return (
     <BrowserRouter>
+      {showSpin && <Spinner />}
       <HeaderMenu />
       <Switch>
         <Route exact path="/" component={Home} />

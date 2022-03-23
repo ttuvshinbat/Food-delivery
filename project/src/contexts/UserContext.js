@@ -7,7 +7,8 @@ export function useUser() {
 export const UserProvider = (props) => {
   const [user, setUser] = useState();
   useEffect(() => {
-    if (localStorage.getItem("userinfo")) {
+    console.log("inside useEffect");
+    if (localStorage.getItem("userInfo")) {
       const data = JSON.parse(localStorage.getItem("userInfo"));
       console.log(data);
       setUser({

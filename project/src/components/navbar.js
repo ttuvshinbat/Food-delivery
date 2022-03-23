@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { getBasketinfo } from "../services/basketService";
 
 // import SearchForm from "./SearchForm";
 
@@ -16,14 +15,13 @@ import CartSidebar from "./CartSidebar";
 const HeaderMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [user, setUser] = useUser();
-  console.log(user);
+
   let search;
   let history = useHistory();
   function handleSubmit(e) {
     e.preventDefault();
     history.push(`search?q=${search.value}`);
   }
-
   let menu;
   if (showMenu) {
     menu = (
