@@ -3,13 +3,16 @@ import navlogo from "../icons/navlogo.svg";
 import "../css/adress.css";
 import { useState, useEffect } from "react";
 import { basketService } from "../services/basketService";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { useSpinner } from "../contexts/WaitSpinner";
+import { useSpinner } from "../contexts/SpinnerContext";
+import { useBasket } from "../contexts/BasketContext";
+
 const AddressVertification = () => {
   const [state, setstate] = useState(0);
   const [spin, setSpin] = useSpinner();
+  const [basket, setBasket] = useBasket()
+  const [showSpinner, setShowSpinner] = useSpinner();
   const togleShow = (event) => {
     setstate(event.target.value);
   };
@@ -23,17 +26,9 @@ const AddressVertification = () => {
   const togleShow2 = (event) => {
     setstate2(event.target.value);
   };
-  const [first, setfirst] = useState({ success: false });
-  const [changed, setChanged] = useState(false);
 
-  useEffect(() => {
-    basketService
-      .getBasketinfo()
-      .then((res) => res.json())
-      .then((data) => setfirst(data));
-  }, [changed]);
 
-  const el = first.baskets;
+
   let summit = 0;
   return (
     <div className="container">
@@ -164,44 +159,43 @@ const AddressVertification = () => {
           </p>
           <form action="">
             <div className="gadna my-4 d-flex flex-column  justify-content-between ondorOghoos   ">
-              {first.success === true
-                ? el.map((data) => {
-                    if (data.product.discount === 0) {
-                      summit += data.product.price * data.quantity;
-                    } else {
-                      summit +=
-                        ((data.product.price * (100 - data.product.discount)) /
-                          100) *
-                        data.quantity;
-                    }
+              {basket.map((data) => {
+                if (data.product.discount === 0) {
+                  summit += data.product.price * data.quantity;
+                } else {
+                  summit +=
+                    ((data.product.price * (100 - data.product.discount)) /
+                      100) *
+                    data.quantity;
+                }
 
-                    return (
-                      <div
-                        className="align-items-center d-flex flex-column justify-content-center "
-                        key={data.product._id}
-                      >
-                        <p className="py-2 my-2">
-                          {" "}
-                          {data.product.name} ({data.quantity}){" "}
-                          <span className="text-shargal px-5 mx-5">
-                            {data.product.discount === 0
-                              ? data.product.price * data.quantity
-                              : ((data.product.price *
-                                  (100 - data.product.discount)) /
-                                  100) *
-                                data.quantity}
-                            ₮
-                            <button
-                              type="button "
-                              className="btn-close mx-5"
-                              aria-label="Close"
-                            ></button>{" "}
-                          </span>{" "}
-                        </p>
-                      </div>
-                    );
-                  })
-                : spin}
+                return (
+                  <div
+                    className="align-items-center d-flex flex-column justify-content-center "
+                    key={data.product._id}
+                  >
+                    <p className="py-2 my-2">
+                      {" "}
+                      {data.product.name} ({data.quantity}){" "}
+                      <span className="text-shargal px-5 mx-5">
+                        {data.product.discount === 0
+                          ? data.product.price * data.quantity
+                          : ((data.product.price *
+                            (100 - data.product.discount)) /
+                            100) *
+                          data.quantity}
+                        ₮
+                        <button
+                          type="button "
+                          className="btn-close mx-5"
+                          aria-label="Close"
+                        ></button>{" "}
+                      </span>{" "}
+                    </p>
+                  </div>
+                );
+              })
+              }
 
               <div className="lastButton my-2 py-2">
                 <p className=" marginAvii">Нийт : {summit}₮</p>

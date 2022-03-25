@@ -3,7 +3,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 import "../css/offcanvas.css";
 import CartItems from "./CartItems";
-import { useSpinner } from "../contexts/WaitSpinner";
+import { useSpinner } from "../contexts/SpinnerContext";
 function CartSidebar() {
   const [show, setShow] = useState(false);
   const [showSpinner, setShowSpinner] = useSpinner();
