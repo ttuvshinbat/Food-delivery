@@ -64,6 +64,7 @@ const AddressVertification = () => {
                   <option value="1">Баянзүрэх Дүүрэг</option>
                   <option value="2">СүхБаатар Дүүрэг</option>
                   <option value="3">Сонгинохайрхан Дүүрэг</option>
+                  <option value="4">Чингэлтэй Дүүрэг</option>
                 </select>
               </div>
               <div className="col-12 col-md-8 my-2 selectbox">
