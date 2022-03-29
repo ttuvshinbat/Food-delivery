@@ -20,7 +20,7 @@ import NewPassword from "./components/NewPassword";
 import AddressVertification from "./components/AddressVertification";
 import UserProfile from "./components/UserProfile";
 import Spinner from "./components/Spinner";
-import { useSpinner } from "./contexts/WaitSpinner";
+import { useSpinner } from "./contexts/SpinnerContext";
 // import { useUser } from "./contexts/UserContext";
 
 function App() {

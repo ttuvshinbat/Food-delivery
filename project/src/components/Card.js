@@ -14,9 +14,9 @@ const Card = (props) => {
             <img src={'https://mtars-fooddelivery.s3.ap-southeast-1.amazonaws.com' + data.image} alt="" />
             <div className="badge">{data.discount}%</div>
             <p>{data.name}</p>
-            <div class="middle">
+            <div className="middle">
                 <img className="hoverImg" src="/icons/whiteMarket.svg" alt="" />
-                <div class="hoverText">Сагслах</div>
+                <div className="hoverText">Сагслах</div>
             </div>
             <div className="price">
                 <p className="activePrice">{new Intl.NumberFormat().format(data.price - data.price * data.discount / 100)}₮ </p>
@@ -27,9 +27,9 @@ const Card = (props) => {
         <div className="card"
         >
             <img src={'https://mtars-fooddelivery.s3.ap-southeast-1.amazonaws.com' + data.image} />
-            <div class="middle">
+            <div className="middle">
                 <img className="hoverImg" src="/icons/whiteMarket.svg" alt="" />
-                <div class="hoverText">Сагслах</div>
+                <div className="hoverText">Сагслах</div>
             </div>
             <p>{data.name}</p>
             <div className="price">

@@ -35,6 +35,7 @@ export const getBasketinfo = async () => {
 export const deleteBasket = async (props) => {
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.userInfo);
+
   return await fetch("https://dev-api.mstars.mn/api/basket", {
     method: "POST",
     headers: {

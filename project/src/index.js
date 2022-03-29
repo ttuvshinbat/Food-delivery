@@ -5,17 +5,24 @@ import "leaflet/dist/leaflet.css";
 import App from "./App";
 import { UserProvider } from "./contexts/UserContext";
 import { FoodProvider } from "./contexts/FoodPortions";
-import { SpinnerProvider } from "./contexts/WaitSpinner";
+import { SpinnerProvider } from "./contexts/SpinnerContext";
+import { BasketProvider } from "./contexts/BasketContext"
 
 ReactDOM.render(
   <React.StrictMode>
-    <FoodProvider>
-      <UserProvider>
-        <SpinnerProvider>
-          <App />
-        </SpinnerProvider>
-      </UserProvider>
-    </FoodProvider>
+    <BasketProvider>
+
+
+      <FoodProvider>
+        <UserProvider>
+          <SpinnerProvider>
+
+            <App />
+
+          </SpinnerProvider>
+        </UserProvider>
+      </FoodProvider>
+    </BasketProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

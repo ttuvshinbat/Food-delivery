@@ -5,7 +5,7 @@ import "../css/cartItems.css";
 import { basketService } from "../services/basketService";
 import { NavLink, Switch } from "react-router-dom";
 import Delivery from "./Delivery";
-import { useSpinner } from "../contexts/WaitSpinner";
+import { useSpinner } from "../contexts/SpinnerContext";
 
 function CartItems(props) {
   const [showSpinner, setShowSpinner] = useSpinner();
@@ -26,12 +26,14 @@ function CartItems(props) {
     props.handleClose();
   };
   const deletedBasket = async (d) => {
+    setShowSpinner(true);
     basketService
       .deleteBasket(d)
       .then((data) => data.json())
       .then((data) => {
+
         if (data.success) {
-          // setChanged(!changed);
+
           setShowSpinner(false);
         }
       });
@@ -82,7 +84,7 @@ function CartItems(props) {
                   {data.product.discount === 0
                     ? data.product.price
                     : (data.product.price / 100) *
-                      (100 - data.product.discount)}
+                    (100 - data.product.discount)}
                 </p>
                 <div className="buttons">
                   <button onClick={() => updateBasket(-1, data.product._id)}>
