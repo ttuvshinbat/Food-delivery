@@ -10,8 +10,7 @@ import { useBasket } from "../contexts/BasketContext";
 
 const AddressVertification = () => {
   const [state, setstate] = useState(0);
-  const [spin, setSpin] = useSpinner();
-  const [basket, setBasket] = useBasket()
+  const [basket, setBasket] = useBasket();
   const [showSpinner, setShowSpinner] = useSpinner();
   const togleShow = (event) => {
     setstate(event.target.value);
@@ -26,8 +25,6 @@ const AddressVertification = () => {
   const togleShow2 = (event) => {
     setstate2(event.target.value);
   };
-
-
 
   let summit = 0;
   return (
@@ -182,9 +179,9 @@ const AddressVertification = () => {
                         {data.product.discount === 0
                           ? data.product.price * data.quantity
                           : ((data.product.price *
-                            (100 - data.product.discount)) /
-                            100) *
-                          data.quantity}
+                              (100 - data.product.discount)) /
+                              100) *
+                            data.quantity}
                         ₮
                         <button
                           type="button "
@@ -195,8 +192,7 @@ const AddressVertification = () => {
                     </p>
                   </div>
                 );
-              })
-              }
+              })}
 
               <div className="lastButton my-2 py-2">
                 <p className=" marginAvii">Нийт : {summit}₮</p>
