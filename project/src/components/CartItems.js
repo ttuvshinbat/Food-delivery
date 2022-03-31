@@ -24,6 +24,9 @@ function CartItems(props) {
   }, [showSpinner]);
   const dropClick = () => {
     props.handleClose();
+    console.log();
+
+    window.location.reload();
   };
   const deletedBasket = async (d) => {
     setShowSpinner(true);
@@ -31,9 +34,7 @@ function CartItems(props) {
       .deleteBasket(d)
       .then((data) => data.json())
       .then((data) => {
-
         if (data.success) {
-
           setShowSpinner(false);
         }
       });
@@ -84,7 +85,7 @@ function CartItems(props) {
                   {data.product.discount === 0
                     ? data.product.price
                     : (data.product.price / 100) *
-                    (100 - data.product.discount)}
+                      (100 - data.product.discount)}
                 </p>
                 <div className="buttons">
                   <button onClick={() => updateBasket(-1, data.product._id)}>

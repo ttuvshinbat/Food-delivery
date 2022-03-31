@@ -25,7 +25,7 @@ const AddressVertification = () => {
   const togleShow2 = (event) => {
     setstate2(event.target.value);
   };
-
+  useEffect(() => {}, [basket]);
   let summit = 0;
   return (
     <div className="container">
