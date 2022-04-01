@@ -10,7 +10,8 @@ import { useBasket } from "../contexts/BasketContext";
 
 const AddressVertification = () => {
   const [state, setstate] = useState(0);
-  const [basket, setBasket] = useBasket();
+  const [basket] = useBasket([]);
+  console.log(basket);
   const [showSpinner, setShowSpinner] = useSpinner();
   const togleShow = (event) => {
     setstate(event.target.value);
