@@ -6,36 +6,48 @@ import { basketService } from "../services/basketService";
 import { NavLink, Switch } from "react-router-dom";
 import Delivery from "./Delivery";
 import { useSpinner } from "../contexts/SpinnerContext";
+import { useBasket } from "../contexts/BasketContext";
 
 function CartItems(props) {
-  const [showSpinner, setShowSpinner] = useSpinner();
+  const [showSpinner, setShowSpinner] = useSpinner(false);
 
-  const [basket, setBasket] = useState([]);
+  const [basket, setBasket, handleDataChange] = useBasket([]);
   const [changed, setChanged] = useState(false);
+  console.log(basket);
+  // useEffect(() => {
+  //   basketService
+  //     .getBasketinfo()
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //     })
+  //     .finally((e) => );
+  // }, [showSpinner]);
 
   useEffect(() => {
-    basketService
-      .getBasketinfo()
-      .then((res) => res.json())
-      .then((data) => {
-        setBasket(data.baskets);
-      })
-      .finally((e) => setShowSpinner(false));
-  }, [showSpinner]);
+    setShowSpinner(false);
+  }, []);
+  // window.location.reload();
   const dropClick = () => {
     props.handleClose();
+    console.log();
   };
+
   const deletedBasket = async (d) => {
     setShowSpinner(true);
+
     basketService
       .deleteBasket(d)
       .then((data) => data.json())
       .then((data) => {
-
         if (data.success) {
-
           setShowSpinner(false);
         }
+      })
+      .catch((e) => setShowSpinner(false))
+      .finally((e) => {
+        setShowSpinner(false);
+        handleDataChange();
       });
   };
   const updateBasket = (q, id) => {
@@ -48,7 +60,11 @@ function CartItems(props) {
         } else {
         }
       })
-      .finally((e) => setShowSpinner(false));
+      .catch((e) => setShowSpinner(false))
+      .finally((e) => {
+        setShowSpinner(false);
+        handleDataChange();
+      });
   };
 
   let summit = 0;
@@ -84,7 +100,7 @@ function CartItems(props) {
                   {data.product.discount === 0
                     ? data.product.price
                     : (data.product.price / 100) *
-                    (100 - data.product.discount)}
+                      (100 - data.product.discount)}
                 </p>
                 <div className="buttons">
                   <button onClick={() => updateBasket(-1, data.product._id)}>

@@ -10,8 +10,8 @@ import { useBasket } from "../contexts/BasketContext";
 
 const AddressVertification = () => {
   const [state, setstate] = useState(0);
-
-  const [basket, setBasket] = useBasket()
+  const [basket] = useBasket([]);
+  console.log(basket);
   const [showSpinner, setShowSpinner] = useSpinner();
   useEffect(() => {
 
@@ -29,12 +29,7 @@ const AddressVertification = () => {
   const togleShow2 = (event) => {
     setstate2(event.target.value);
   };
-
-
-
-
-
-
+  useEffect(() => { }, [basket]);
   let summit = 0;
   return (
     <div className="container">
@@ -201,8 +196,7 @@ const AddressVertification = () => {
                     </p>
                   </div>
                 );
-              })
-              }
+              })}
 
               <div className="lastButton my-2 py-2">
                 <p className=" marginAvii">Нийт : {summit}₮</p>
