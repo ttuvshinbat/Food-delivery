@@ -10,9 +10,12 @@ import { useBasket } from "../contexts/BasketContext";
 
 const AddressVertification = () => {
   const [state, setstate] = useState(0);
-  const [spin, setSpin] = useSpinner();
+
   const [basket, setBasket] = useBasket()
   const [showSpinner, setShowSpinner] = useSpinner();
+  useEffect(() => {
+
+  }, [basket])
   const togleShow = (event) => {
     setstate(event.target.value);
   };
@@ -26,6 +29,9 @@ const AddressVertification = () => {
   const togleShow2 = (event) => {
     setstate2(event.target.value);
   };
+
+
+
 
 
 
@@ -176,7 +182,7 @@ const AddressVertification = () => {
                     key={data.product._id}
                   >
                     <p className="py-2 my-2">
-                      {" "}
+                      { }
                       {data.product.name} ({data.quantity}){" "}
                       <span className="text-shargal px-5 mx-5">
                         {data.product.discount === 0
