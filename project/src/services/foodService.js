@@ -14,7 +14,7 @@ export const getAllPic = async () => {
     {
       method: "GET",
       headers: {
-        "Countent-Type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(),
     }
