@@ -13,6 +13,9 @@ const AddressVertification = () => {
   const [basket] = useBasket([]);
   console.log(basket);
   const [showSpinner, setShowSpinner] = useSpinner();
+  useEffect(() => {
+
+  }, [basket])
   const togleShow = (event) => {
     setstate(event.target.value);
   };
@@ -26,7 +29,7 @@ const AddressVertification = () => {
   const togleShow2 = (event) => {
     setstate2(event.target.value);
   };
-  useEffect(() => {}, [basket]);
+  useEffect(() => { }, [basket]);
   let summit = 0;
   return (
     <div className="container">
@@ -174,15 +177,15 @@ const AddressVertification = () => {
                     key={data.product._id}
                   >
                     <p className="py-2 my-2">
-                      {" "}
+                      { }
                       {data.product.name} ({data.quantity}){" "}
                       <span className="text-shargal px-5 mx-5">
                         {data.product.discount === 0
                           ? data.product.price * data.quantity
                           : ((data.product.price *
-                              (100 - data.product.discount)) /
-                              100) *
-                            data.quantity}
+                            (100 - data.product.discount)) /
+                            100) *
+                          data.quantity}
                         ₮
                         <button
                           type="button "
