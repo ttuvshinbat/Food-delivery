@@ -16,11 +16,11 @@ function Sales(prop) {
               case "Хямдралтай":
                 return data.discount !== 0;
               case "Үндсэн хоол":
-                return data.category === "Үндсэн хоол";
+                return data.category.name === "Үндсэн хоол";
               case "Салад ба зууш":
-                return data.category === "Салад ба зууш";
+                return data.category.name === "Салад ба зууш";
               case "Амттан":
-                return data.category === "Амттан";
+                return data.category.name === "Амттан";
             }
           })
           .slice(0, 4)

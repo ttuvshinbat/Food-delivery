@@ -8,11 +8,12 @@ import { userService } from "../services/userService.js";
 const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
+
     userService
       .registerUser({
         email: event.target.email.value,
         password: event.target.password.value,
-        name: "temka",
+        name: "Tuvshee",
         address: "mongolia",
       })
       .then((sda) => {
@@ -43,7 +44,7 @@ const Register = () => {
         </label>
       </div>
 
-      <Buttons class={"signupTabletView"} type={"Бүртгүүлэх"} />
+      <Buttons class={"signupTabletView"} type="submit" />
     </Form>
   );
 };
