@@ -162,30 +162,30 @@ const AddressVertification = () => {
           <form action="">
             <div className="gadna my-4 d-flex flex-column  justify-content-between ondorOghoos   ">
               {basket.map((data) => {
-                if (data.product.discount === 0) {
-                  summit += data.product.price * data.quantity;
+                if (data.order.food_id.discount === 0) {
+                  summit += data.order.food_id.price * data.order.quantity;
                 } else {
                   summit +=
-                    ((data.product.price * (100 - data.product.discount)) /
+                    ((data.order.food_id.price * (100 - data.order.food_id.discount)) /
                       100) *
-                    data.quantity;
+                    data.order.quantity;
                 }
 
                 return (
                   <div
                     className="align-items-center d-flex flex-column justify-content-center "
-                    key={data.product._id}
+                    key={data.order.food_id._id}
                   >
                     <p className="py-2 my-2">
                       { }
-                      {data.product.name} ({data.quantity}){" "}
+                      {data.order.food_id.name} ({data.order.quantity}){" "}
                       <span className="text-shargal px-5 mx-5">
-                        {data.product.discount === 0
-                          ? data.product.price * data.quantity
-                          : ((data.product.price *
-                            (100 - data.product.discount)) /
+                        {data.order.food_id.discount === 0
+                          ? data.order.food_id.price * data.order.quantity
+                          : ((data.order.food_id.price *
+                            (100 - data.order.food_id.discount)) /
                             100) *
-                          data.quantity}
+                          data.order.quantity}
                         ₮
                         <button
                           type="button "

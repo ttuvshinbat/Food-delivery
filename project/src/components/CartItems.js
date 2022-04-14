@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Meal from "../img/meal.png";
 import DeleteMeal from "../img/delete_meal.png";
 import "../css/cartItems.css";
 import { basketService } from "../services/basketService";
-import { NavLink, Switch } from "react-router-dom";
-import Delivery from "./Delivery";
+import { NavLink, } from "react-router-dom";
 import { useSpinner } from "../contexts/SpinnerContext";
 import { useBasket } from "../contexts/BasketContext";
 
@@ -13,7 +11,7 @@ function CartItems(props) {
 
   const [basket, setBasket, handleDataChange] = useBasket([]);
   const [changed, setChanged] = useState(false);
-  console.log(basket);
+  console.log(basket)
   // useEffect(() => {
   //   basketService
   //     .getBasketinfo()
@@ -71,13 +69,13 @@ function CartItems(props) {
 
   return (
     <div className="main-body">
-      {basket.map((data) => {
-        if (data.product.discount === 0) {
-          summit += data.product.price * data.quantity;
+      {/* {basket.map((data) => {
+        if (data.order.food_id.discount === 0) {
+          summit += data.order.food_id.price * data.order.quantity;
         } else {
           summit +=
-            (data.product.price / 100) *
-            (100 - data.product.discount) *
+            (data.order.food_id.price / 100) *
+            (100 - data.order.food_id.discount) *
             data.quantity;
         }
 
@@ -88,28 +86,28 @@ function CartItems(props) {
                 <img
                   src={
                     "https://mtars-fooddelivery.s3.ap-southeast-1.amazonaws.com" +
-                    data.product.image
+                    data.order.food_id.image
                   }
                   alt=""
                   className="item-image"
                 />
               </div>
               <div className="details">
-                <p className="cart-item-name">{data.product.name}</p>
+                <p className="cart-item-name">{data.order.food_id.name}</p>
                 <p className="cart-item-price">
-                  {data.product.discount === 0
-                    ? data.product.price
-                    : (data.product.price / 100) *
-                      (100 - data.product.discount)}
+                  {data.order.food_id.discount === 0
+                    ? data.order.food_id.price
+                    : (data.order.food_id.price / 100) *
+                    (100 - data.order.food_id.discount)}
                 </p>
                 <div className="buttons">
-                  <button onClick={() => updateBasket(-1, data.product._id)}>
+                  <button onClick={() => updateBasket(-1, data.order.food_id._id)}>
                     -
                   </button>
-                  <p>{data.quantity}</p>
+                  <p>{data.order.quantity}</p>
                   <button
                     onClick={() => {
-                      updateBasket(1, data.product._id);
+                      updateBasket(1, data.order.food_id._id);
                     }}
                   >
                     +
@@ -126,7 +124,7 @@ function CartItems(props) {
             </div>
           </div>
         );
-      })}
+      })} */}
       <div className="order-section">
         <p className="totalPrice">{summit}</p>
         <NavLink to="/address">

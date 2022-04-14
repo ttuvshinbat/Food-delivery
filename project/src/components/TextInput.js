@@ -31,6 +31,16 @@ const TextInput = (props) => {
       />
     </div>
   );
+  if (type === 'text')
+    defInput = (<div className="input-container d-flex">
+      <Form.Control
+        className="input-field"
+        type={type}
+        placeholder={"нэрээ оруулна уу."}
+      />
+    </div>
+
+    );
   if (type === "password" || type === "passwordRepeat")
     defInput = (
       <div className="input-container d-flex">
@@ -59,6 +69,7 @@ const TextInput = (props) => {
         />
       </div>
     );
+
 
   return (
     <Form.Group className="form mb-3" controlId={type}>

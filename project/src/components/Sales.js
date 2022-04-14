@@ -6,7 +6,7 @@ import { useFood } from "../contexts/FoodPortions";
 function Sales(prop) {
   const [foods] = useFood();
   const [mainSales, setMainSales] = useState([]);
-  console.log(foods);
+
   useEffect(
     () => {
       setMainSales(

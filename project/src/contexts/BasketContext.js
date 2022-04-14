@@ -11,17 +11,18 @@ export const BasketProvider = (props) => {
   const [isUpdate, setIsUpdate] = useState(false);
 
   const handleDataChange = () => {
-    console.log("call");
+
     setIsUpdate(true);
   };
   useEffect(() => {
-    console.log("new call");
+
     basketService
       .getBasketinfo()
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          setBasket(data.baskets);
+          console.log(data)
+          setBasket(data.data);
         } else {
           console.log("error");
         }

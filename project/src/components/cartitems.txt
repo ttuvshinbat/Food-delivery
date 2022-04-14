@@ -1,0 +1,56 @@
+    {basket.map((data) => {
+        if (data.order.food_id.discount === 0) {
+          summit += data.order.food_id.price * data.order.quantity;
+        } else {
+          summit +=
+            (data.order.food_id.price / 100) *
+            (100 - data.order.food_id.discount) *
+            data.quantity;
+        }
+
+        return (
+          <div>
+            <div className="cart-items">
+              <div className="thumbnail">
+                <img
+                  src={
+                    "https://mtars-fooddelivery.s3.ap-southeast-1.amazonaws.com" +
+                    data.order.food_id.image
+                  }
+                  alt=""
+                  className="item-image"
+                />
+              </div>
+              <div className="details">
+                <p className="cart-item-name">{data.order.food_id.name}</p>
+                <p className="cart-item-price">
+                  {data.order.food_id.discount === 0
+                    ? data.order.food_id.price
+                    : (data.order.food_id.price / 100) *
+                    (100 - data.order.food_id.discount)}
+                </p>
+                <div className="buttons">
+                  <button onClick={() => updateBasket(-1, data.order.food_id._id)}>
+                    -
+                  </button>
+                  <p>{data.order.quantity}</p>
+                  <button
+                    onClick={() => {
+                      updateBasket(1, data.order.food_id._id);
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div className="close-button">
+                <img
+                  src={DeleteMeal}
+                  onClick={() => deletedBasket(data)}
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        );
+      })}

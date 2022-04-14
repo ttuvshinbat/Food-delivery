@@ -1,18 +1,18 @@
 const loginUser = async (credentials) => {
-  return await fetch("http://localhost:3002/admin/login", {
+  return await fetch("http://52.221.185.255:3002/admin/login", {
     method: "POST",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(credentials),
   });
 };
 
 const registerUser = async (credentials) => {
-  return await fetch("http://localhost:3002/admin/register/", {
+  return await fetch("http://52.221.185.255:3002/admin/register", {
     method: "POST",
     headers: {
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(credentials),
   });

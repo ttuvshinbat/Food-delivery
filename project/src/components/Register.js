@@ -12,14 +12,22 @@ const Register = () => {
     userService
       .registerUser({
         email: event.target.email.value,
+        name: event.target.text.value,
         password: event.target.password.value,
-        name: "Tuvshee",
+
         address: "mongolia",
       })
-      .then((sda) => {
-        sda.json();
+      .then((data) => data.json()
+      )
+      .then((data) => {
+        console.log(data);
+        if (data.success === true) {
+          alert("хэрэглэгчийг амжилттай бүртэгсэн")
+        } else {
+          alert("хэрэглэгчийг бүртгэхэд алдаа гарлаа")
+        }
       })
-      .then((data) => console.log(data));
+
   };
   return (
     <Form
@@ -29,6 +37,7 @@ const Register = () => {
       <p className="hmm fw-bold">Бүртгүүлэх</p>
 
       <TextInput type={"email"} name={"И-мэйл"} value="" />
+      <TextInput type={"text"} name={"НЭР"} value="" />
       <TextInput type={"password"} name={"Нууц үг"} value="" />
       <TextInput type={"passwordRepeat"} name={"Нууц үг давтах"} value="" />
 
