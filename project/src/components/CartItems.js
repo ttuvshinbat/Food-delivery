@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import DeleteMeal from "../img/delete_meal.png";
 import "../css/cartItems.css";
 import { basketService } from "../services/basketService";
-import { NavLink, } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSpinner } from "../contexts/SpinnerContext";
 import { useBasket } from "../contexts/BasketContext";
 
@@ -11,7 +11,8 @@ function CartItems(props) {
 
   const [basket, setBasket, handleDataChange] = useBasket([]);
   const [changed, setChanged] = useState(false);
-  console.log(basket)
+  console.log(basket);
+
   // useEffect(() => {
   //   basketService
   //     .getBasketinfo()
@@ -69,14 +70,14 @@ function CartItems(props) {
 
   return (
     <div className="main-body">
-      {/* {basket.map((data) => {
+      {basket.map((data) => {
         if (data.order.food_id.discount === 0) {
           summit += data.order.food_id.price * data.order.quantity;
         } else {
           summit +=
             (data.order.food_id.price / 100) *
             (100 - data.order.food_id.discount) *
-            data.quantity;
+            data.order.quantity;
         }
 
         return (
@@ -98,10 +99,12 @@ function CartItems(props) {
                   {data.order.food_id.discount === 0
                     ? data.order.food_id.price
                     : (data.order.food_id.price / 100) *
-                    (100 - data.order.food_id.discount)}
+                      (100 - data.order.food_id.discount)}
                 </p>
                 <div className="buttons">
-                  <button onClick={() => updateBasket(-1, data.order.food_id._id)}>
+                  <button
+                    onClick={() => updateBasket(-1, data.order.food_id._id)}
+                  >
                     -
                   </button>
                   <p>{data.order.quantity}</p>
@@ -124,7 +127,7 @@ function CartItems(props) {
             </div>
           </div>
         );
-      })} */}
+      })}
       <div className="order-section">
         <p className="totalPrice">{summit}</p>
         <NavLink to="/address">

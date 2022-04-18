@@ -2,7 +2,7 @@ export const addItem = async (props) => {
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.userInfo);
 
-  return fetch("http://52.221.185.255:3002/api/basket", {
+  return fetch("http://localhost:3002/api/basket", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export const getBasketinfo = async () => {
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.userInfo);
 
-  return fetch("http://52.221.185.255:3002/api/basket-info", {
+  return fetch("http://localhost:3002/api/basket-info", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export const deleteBasket = async (props) => {
   const token = localStorage.getItem("token");
   const data = JSON.parse(localStorage.userInfo);
 
-  return fetch("http://52.221.185.255:3002/api/basket", {
+  return fetch("http://localhost:3002/api/basket", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
