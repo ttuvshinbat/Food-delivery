@@ -1,5 +1,5 @@
 const loginUser = async (credentials) => {
-  return await fetch("http://52.221.185.255:3002/admin/login", {
+  return await fetch("http://localhost:3002/admin/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -9,7 +9,7 @@ const loginUser = async (credentials) => {
 };
 
 const registerUser = async (credentials) => {
-  return await fetch("http://52.221.185.255:3002/admin/register", {
+  return await fetch("http://localhost:3002/admin/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
