@@ -99,7 +99,7 @@ function CartItems(props) {
                   {data.order.food_id.discount === 0
                     ? data.order.food_id.price
                     : (data.order.food_id.price / 100) *
-                      (100 - data.order.food_id.discount)}
+                    (100 - data.order.food_id.discount)}
                 </p>
                 <div className="buttons">
                   <button
