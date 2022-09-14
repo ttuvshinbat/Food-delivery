@@ -96,7 +96,7 @@ const AddressVertification = () => {
                 >
                   <option value="0">Байр, гудамж сонгоно уу.</option>
                   <option value="1">1-р байр</option>
-                  <option value="2">90-р байр</option>
+                  <option value="2">91-р байр</option>
                 </select>
               </div>
 
